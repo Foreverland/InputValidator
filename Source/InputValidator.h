@@ -1,4 +1,3 @@
-#import "Field.h"
 #import "FieldValidation.h"
 
 @interface InputValidator : NSObject
