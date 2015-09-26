@@ -9,7 +9,9 @@
 
 - (BOOL)validateReplacementString:(NSString *)replacementString withText:(NSString *)text withRange:(NSRange)range {
     BOOL shouldSkipValidations = (!self.validation);
-    if (shouldSkipValidations) return YES;
+    if (shouldSkipValidations) {
+        return YES;
+    }
 
     NSString *evaluatedString = text;
 

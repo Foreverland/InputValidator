@@ -4,8 +4,9 @@
 
 - (BOOL)validateReplacementString:(NSString *)string withText:(NSString *)text withRange:(NSRange)range {
     BOOL valid = [super validateReplacementString:string withText:text withRange:range];
-
-    if (!valid) return valid;
+    if (!valid) {
+        return valid;
+    }
 
     if (!string) {
         return (text.length > 0);
