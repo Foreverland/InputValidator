@@ -2,7 +2,7 @@
 
 @interface InputValidator : NSObject
 
-@property (nonatomic) Validation *validation;
+- (instancetype)initWithValidation:(Validation *)validation;
 
 - (BOOL)validateString:(NSString *)string;
 

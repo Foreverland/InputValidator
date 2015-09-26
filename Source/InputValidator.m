@@ -1,7 +1,22 @@
 #import "InputValidator.h"
 #import "NumberInputValidator.h"
 
+@interface InputValidator ()
+
+@property (nonatomic) Validation *validation;
+
+@end
+
 @implementation InputValidator
+
+- (instancetype)initWithValidation:(Validation *)validation {
+    self = [super init];
+    if (self) {
+        _validation = validation;
+    }
+
+    return self;
+}
 
 - (BOOL)validateString:(NSString *)string {
     return [self validateReplacementString:nil withText:string withRange:NSMakeRange(0, 0)];
