@@ -8,12 +8,16 @@
 }
 
 - (BOOL)validateReplacementString:(NSString *)replacementString withText:(NSString *)text withRange:(NSRange)range {
-    BOOL shouldSkipValidations = (text.length == 0 || !self.validation);
+    BOOL shouldSkipValidations = (!self.validation);
     if (shouldSkipValidations) return YES;
 
     NSString *evaluatedString = text;
 
     BOOL valid = YES;
+
+    if (self.validation.required == YES && !self.validation.minimumLength) {
+        self.validation.minimumLength = @1;
+    }
 
     if (self.validation.maximumLength || self.validation.minimumLength) {
         NSUInteger textLength = text.length;
