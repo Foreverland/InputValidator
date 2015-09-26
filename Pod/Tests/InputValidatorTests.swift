@@ -45,6 +45,18 @@ class InputValidatorTests: XCTestCase {
         XCTAssertTrue(validator.validateString("123456"))
     }
 
+    func testBetweenLengthsValidation() {
+        let validation = Validation()
+        validation.minimumLength = NSNumber(int: 5)
+        validation.maximumLength = NSNumber(int: 6)
+
+        let validator = InputValidator(validation: validation)
+        XCTAssertFalse(validator.validateString("1234"))
+        XCTAssertTrue(validator.validateString("12345"))
+        XCTAssertTrue(validator.validateString("123456"))
+        XCTAssertFalse(validator.validateString("1234567"))
+    }
+
     func testMaximumValueValidation() {
         let validation = Validation()
         validation.maximumValue = NSNumber(int: 100)
@@ -63,6 +75,18 @@ class InputValidatorTests: XCTestCase {
         XCTAssertFalse(validator.validateString("50"))
         XCTAssertTrue(validator.validateString("100"))
         XCTAssertTrue(validator.validateString("200"))
+    }
+
+    func testBetweenValuesValidation() {
+        let validation = Validation()
+        validation.minimumValue = NSNumber(int: 5)
+        validation.maximumValue = NSNumber(int: 6)
+
+        let validator = InputValidator(validation: validation)
+        XCTAssertFalse(validator.validateString("4"))
+        XCTAssertTrue(validator.validateString("5"))
+        XCTAssertTrue(validator.validateString("6"))
+        XCTAssertFalse(validator.validateString("7"))
     }
 
     func testRequiredValidation() {
