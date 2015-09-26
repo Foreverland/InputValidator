@@ -28,11 +28,25 @@ class InputValidatorTests: XCTestCase {
     }
 
     func testMaximumLengthValidation() {
+        let validation = Validation()
+        validation.maximumLength = NSNumber(int: 5)
 
+        let validator = InputValidator()
+        validator.validation = validation
+        XCTAssertTrue(validator.validateString("1234"))
+        XCTAssertTrue(validator.validateString("12345"))
+        XCTAssertFalse(validator.validateString("123456"))
     }
 
     func testMinimumLengthValidation() {
+        let validation = Validation()
+        validation.minimumLength = NSNumber(int: 5)
 
+        let validator = InputValidator()
+        validator.validation = validation
+        XCTAssertFalse(validator.validateString("1234"))
+        XCTAssertTrue(validator.validateString("12345"))
+        XCTAssertTrue(validator.validateString("123456"))
     }
 
     func testMaximumValueValidation() {

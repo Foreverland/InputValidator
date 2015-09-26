@@ -15,13 +15,20 @@
 
     BOOL valid = YES;
 
-    if (self.validation.maximumLength) {
-        NSUInteger textLength = [text length];
+    if (self.validation.maximumLength || self.validation.minimumLength) {
+        NSUInteger textLength = text.length;
 
         if (replacementString.length > 0) {
-            textLength++;
+            textLength += replacementString.length;
         }
-        valid = (textLength <= [self.validation.maximumLength unsignedIntegerValue]);
+
+        if (self.validation.maximumLength) {
+            valid = (textLength <= [self.validation.maximumLength unsignedIntegerValue]);
+        }
+
+        if (valid && self.validation.minimumLength) {
+            valid = (textLength >= [self.validation.minimumLength unsignedIntegerValue]);
+        }
     }
 
     if (replacementString) {
