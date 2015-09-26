@@ -6,7 +6,7 @@ Helps you verify if a string should be inserted into another string, useful when
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (!string || [string isEqualToString:@"\n"]) return YES;
 
-    PhoneNumberInputValidator *inputValidator = [PhoneNumberInputValidator new];
+    NumberInputValidator *inputValidator = [NumberInputValidator new];
     return [inputValidator validateReplacementString:string withText:self.text withRange:range];
 }
 ```
