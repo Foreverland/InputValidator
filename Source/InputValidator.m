@@ -1,5 +1,4 @@
 #import "InputValidator.h"
-#import "NumberInputValidator.h"
 
 @interface InputValidator ()
 
