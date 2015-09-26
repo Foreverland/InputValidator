@@ -52,7 +52,10 @@
     }
 
     if (replacementString) {
-        NSMutableString *composedString = [[NSMutableString alloc] initWithString:text];
+        NSMutableString *composedString = [NSMutableString new];
+        if (text) {
+            [composedString appendString:text];
+        }
         [composedString insertString:replacementString atIndex:range.location];
         evaluatedString = [composedString copy];
     }
