@@ -12,6 +12,8 @@ class InputValidatorTests: XCTestCase {
         let text = "elvisnunez@me.co"
         XCTAssertTrue(validator.validateReplacementString("m", withText: text, withRange: NSRange(location: text.characters.count, length: text.characters.count)))
         XCTAssertFalse(validator.validateReplacementString("!", withText: text, withRange: NSRange(location: text.characters.count, length: text.characters.count)))
+        XCTAssertTrue(validator.validateReplacementString("m", withText: text, withRange: NSRange(location: text.characters.count, length: 4)))
+        XCTAssertFalse(validator.validateReplacementString("]", withText: text, withRange: NSRange(location: text.characters.count, length: 4)))
     }
 
     func testEmailFormatValidation() {
