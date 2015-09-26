@@ -70,9 +70,9 @@
 		146D72AF1AB782920058798C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */,
 				14A139B21AEFC72B00AD732F /* Tests-Bridging-Header.h */,
 				146D72B01AB782920058798C /* Supporting Files */,
-				14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
