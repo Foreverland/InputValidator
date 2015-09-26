@@ -18,8 +18,8 @@ let validation = Validation()
 validation.minimumValue = NSNumber(int: 5)
 validation.maximumValue = NSNumber(int: 6)
 
-let validator = InputValidator(validation: validation)
-var result = validator.validateString("4") // false
+var result: Bool
+result = validator.validateString("4") // false
 result = validator.validateString("5") // true
 result = validator.validateString("6") // true
 result = validator.validateString("7") // false
