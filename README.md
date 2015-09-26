@@ -11,6 +11,20 @@ Helps you verify if a string should be inserted into another string, useful when
 }
 ```
 
+Or if you want to validate that a value is between 5 and 6
+
+```swift
+let validation = Validation()
+validation.minimumValue = NSNumber(int: 5)
+validation.maximumValue = NSNumber(int: 6)
+
+let validator = InputValidator(validation: validation)
+var result = validator.validateString("4") // false
+result = validator.validateString("5") // true
+result = validator.validateString("6") // true
+result = validator.validateString("7") // false
+```
+
 Input validator also lets validate maximum length, minimum length, maximum value, minimum value and check for required fields.
 
 ## Included built-in input validators
