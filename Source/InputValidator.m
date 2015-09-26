@@ -37,17 +37,23 @@
         evaluatedString = [composedString copy];
     }
 
-    if (self.validation.maximumValue && text) {
+    if (text && valid && (self.validation.maximumValue || self.validation.minimumValue)) {
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
         NSNumber *newValue = [formatter numberFromString:evaluatedString];
-        NSNumber *maxValue = self.validation.maximumValue;
 
-        BOOL eligibleForCompare = (newValue && maxValue);
-        if (eligibleForCompare) valid = ([newValue floatValue] <= [maxValue floatValue]);
+        if (newValue) {
+            if (self.validation.maximumValue) {
+                valid = ([newValue floatValue] <= [self.validation.maximumValue floatValue]);
+            }
+
+            if (valid && self.validation.minimumValue) {
+                valid = ([newValue floatValue] >= [self.validation.minimumValue floatValue]);
+            }
+        }
     }
 
-    if (self.validation.format) {
+    if (valid && self.validation.format) {
         NSError *formattingError = nil;
         valid = [self validateString:evaluatedString withFormat:self.validation.format error:&formattingError];
         if (formattingError) {
