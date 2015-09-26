@@ -25,7 +25,12 @@ result = validator.validateString("6") // true
 result = validator.validateString("7") // false
 ```
 
-Input validator also lets validate maximum length, minimum length, maximum value, minimum value and check for required fields.
+Input validator also lets validate:
+- Maximum length
+- Minimum length 
+- Maximum value
+- Minimum value
+- Required (non-empty)
 
 ## Included built-in input validators
 
