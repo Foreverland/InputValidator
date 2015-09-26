@@ -12,15 +12,10 @@
 		14BAB7A51BB53A7700AF3D62 /* NameInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BAB7981BB53A7700AF3D62 /* NameInputValidator.m */; settings = {ASSET_TAGS = (); }; };
 		14C1DAA91BB6AA8F005AA67B /* FloatInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAA61BB6AA8F005AA67B /* FloatInputValidator.m */; settings = {ASSET_TAGS = (); }; };
 		14C1DAAA1BB6AA8F005AA67B /* NumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAA81BB6AA8F005AA67B /* NumberInputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14C1DAB41BB6AADA005AA67B /* BankAccountNumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAAD1BB6AADA005AA67B /* BankAccountNumberInputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14C1DAB51BB6AADA005AA67B /* PhoneNumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAAF1BB6AADA005AA67B /* PhoneNumberInputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14C1DAB61BB6AADA005AA67B /* PostalCodeInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAB11BB6AADA005AA67B /* PostalCodeInputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14C1DAB71BB6AADA005AA67B /* SocialSecurityNumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAB31BB6AADA005AA67B /* SocialSecurityNumberInputValidator.m */; settings = {ASSET_TAGS = (); }; };
 		14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		141F14901BB5355D00CFA5DC /* App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Bridging-Header.h"; sourceTree = "<group>"; };
 		146D72AC1AB782920058798C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146D72B11AB782920058798C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14A139B21AEFC72B00AD732F /* Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -38,14 +33,6 @@
 		14C1DAA61BB6AA8F005AA67B /* FloatInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatInputValidator.m; sourceTree = "<group>"; };
 		14C1DAA71BB6AA8F005AA67B /* NumberInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberInputValidator.h; sourceTree = "<group>"; };
 		14C1DAA81BB6AA8F005AA67B /* NumberInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberInputValidator.m; sourceTree = "<group>"; };
-		14C1DAAC1BB6AADA005AA67B /* BankAccountNumberInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAccountNumberInputValidator.h; sourceTree = "<group>"; };
-		14C1DAAD1BB6AADA005AA67B /* BankAccountNumberInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankAccountNumberInputValidator.m; sourceTree = "<group>"; };
-		14C1DAAE1BB6AADA005AA67B /* PhoneNumberInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberInputValidator.h; sourceTree = "<group>"; };
-		14C1DAAF1BB6AADA005AA67B /* PhoneNumberInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberInputValidator.m; sourceTree = "<group>"; };
-		14C1DAB01BB6AADA005AA67B /* PostalCodeInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostalCodeInputValidator.h; sourceTree = "<group>"; };
-		14C1DAB11BB6AADA005AA67B /* PostalCodeInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostalCodeInputValidator.m; sourceTree = "<group>"; };
-		14C1DAB21BB6AADA005AA67B /* SocialSecurityNumberInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialSecurityNumberInputValidator.h; sourceTree = "<group>"; };
-		14C1DAB31BB6AADA005AA67B /* SocialSecurityNumberInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialSecurityNumberInputValidator.m; sourceTree = "<group>"; };
 		14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,8 +99,6 @@
 		14C1365B1AB784BC00B7B07A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				14C1DAAB1BB6AADA005AA67B /* Legacy */,
-				141F14901BB5355D00CFA5DC /* App-Bridging-Header.h */,
 				14BAB7911BB53A7700AF3D62 /* Validation.h */,
 				14BAB7921BB53A7700AF3D62 /* Validation.m */,
 				14BAB7951BB53A7700AF3D62 /* InputValidator.h */,
@@ -127,21 +112,6 @@
 			);
 			name = Source;
 			path = ../Source;
-			sourceTree = "<group>";
-		};
-		14C1DAAB1BB6AADA005AA67B /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				14C1DAAC1BB6AADA005AA67B /* BankAccountNumberInputValidator.h */,
-				14C1DAAD1BB6AADA005AA67B /* BankAccountNumberInputValidator.m */,
-				14C1DAAE1BB6AADA005AA67B /* PhoneNumberInputValidator.h */,
-				14C1DAAF1BB6AADA005AA67B /* PhoneNumberInputValidator.m */,
-				14C1DAB01BB6AADA005AA67B /* PostalCodeInputValidator.h */,
-				14C1DAB11BB6AADA005AA67B /* PostalCodeInputValidator.m */,
-				14C1DAB21BB6AADA005AA67B /* SocialSecurityNumberInputValidator.h */,
-				14C1DAB31BB6AADA005AA67B /* SocialSecurityNumberInputValidator.m */,
-			);
-			path = Legacy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,13 +186,9 @@
 				14C1DAAA1BB6AA8F005AA67B /* NumberInputValidator.m in Sources */,
 				14BAB7A21BB53A7700AF3D62 /* Validation.m in Sources */,
 				14C1DAA91BB6AA8F005AA67B /* FloatInputValidator.m in Sources */,
-				14C1DAB41BB6AADA005AA67B /* BankAccountNumberInputValidator.m in Sources */,
 				14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */,
 				14BAB7A51BB53A7700AF3D62 /* NameInputValidator.m in Sources */,
 				14BAB7A41BB53A7700AF3D62 /* InputValidator.m in Sources */,
-				14C1DAB71BB6AADA005AA67B /* SocialSecurityNumberInputValidator.m in Sources */,
-				14C1DAB61BB6AADA005AA67B /* PostalCodeInputValidator.m in Sources */,
-				14C1DAB51BB6AADA005AA67B /* PhoneNumberInputValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
