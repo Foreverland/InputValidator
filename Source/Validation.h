@@ -10,8 +10,4 @@
 @property (nonatomic) NSNumber *minimumValue;
 @property (nonatomic, getter = isRequired) BOOL required;
 
-// Legacy
-@property (nonatomic, copy) NSString *compareRule;
-@property (nonatomic, copy) NSString *compareToFieldID;
-
 @end
