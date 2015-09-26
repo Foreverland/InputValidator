@@ -50,14 +50,34 @@ class InputValidatorTests: XCTestCase {
     }
 
     func testMaximumValueValidation() {
+        let validation = Validation()
+        validation.maximumValue = NSNumber(int: 100)
 
+        let validator = InputValidator()
+        validator.validation = validation
+        XCTAssertTrue(validator.validateString("50"))
+        XCTAssertTrue(validator.validateString("100"))
+        XCTAssertFalse(validator.validateString("200"))
     }
 
     func testMinimumValueValidation() {
+        let validation = Validation()
+        validation.minimumValue = NSNumber(int: 100)
 
+        let validator = InputValidator()
+        validator.validation = validation
+        XCTAssertFalse(validator.validateString("50"))
+        XCTAssertTrue(validator.validateString("100"))
+        XCTAssertTrue(validator.validateString("200"))
     }
 
     func testRequiredValidation() {
+        let validation = Validation()
+        validation.required = true
 
+        let validator = InputValidator()
+        validator.validation = validation
+        XCTAssertTrue(validator.validateString("12345"))
+        XCTAssertFalse(validator.validateString(""))
     }
 }
