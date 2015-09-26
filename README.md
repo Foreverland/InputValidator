@@ -13,15 +13,11 @@ Helps you verify if a string should be inserted into another string, useful when
 
 Input validator also lets validate maximum length, minimum length, maximum value, minimum value and check for required fields.
 
-## Current included input validators
+## Included built-in input validators
 
-- Bank account number
 - Float
 - Name
 - Number
-- Phone number
-- Postal code
-- Social Security
 
 ## Installation
 
