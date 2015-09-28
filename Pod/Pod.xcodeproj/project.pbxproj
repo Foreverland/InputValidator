@@ -12,6 +12,8 @@
 		14BAB7A51BB53A7700AF3D62 /* NameInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BAB7981BB53A7700AF3D62 /* NameInputValidator.m */; settings = {ASSET_TAGS = (); }; };
 		14C1DAA91BB6AA8F005AA67B /* FloatInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAA61BB6AA8F005AA67B /* FloatInputValidator.m */; settings = {ASSET_TAGS = (); }; };
 		14C1DAAA1BB6AA8F005AA67B /* NumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAA81BB6AA8F005AA67B /* NumberInputValidator.m */; settings = {ASSET_TAGS = (); }; };
+		14D09CA91BB96E54001CF6B1 /* CardExpirationDateInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D09CA81BB96E54001CF6B1 /* CardExpirationDateInputValidator.m */; settings = {ASSET_TAGS = (); }; };
+		14D09CAB1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D09CAA1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,9 @@
 		14C1DAA61BB6AA8F005AA67B /* FloatInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatInputValidator.m; sourceTree = "<group>"; };
 		14C1DAA71BB6AA8F005AA67B /* NumberInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberInputValidator.h; sourceTree = "<group>"; };
 		14C1DAA81BB6AA8F005AA67B /* NumberInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberInputValidator.m; sourceTree = "<group>"; };
+		14D09CA71BB96E54001CF6B1 /* CardExpirationDateInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardExpirationDateInputValidator.h; sourceTree = "<group>"; };
+		14D09CA81BB96E54001CF6B1 /* CardExpirationDateInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardExpirationDateInputValidator.m; sourceTree = "<group>"; };
+		14D09CAA1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidatorTests.swift; sourceTree = "<group>"; };
 		14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +75,7 @@
 		146D72AF1AB782920058798C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				14D09CAA1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift */,
 				14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */,
 				14A139B21AEFC72B00AD732F /* Tests-Bridging-Header.h */,
 				146D72B01AB782920058798C /* Supporting Files */,
@@ -109,6 +115,8 @@
 				14C1DAA81BB6AA8F005AA67B /* NumberInputValidator.m */,
 				14C1DAA51BB6AA8F005AA67B /* FloatInputValidator.h */,
 				14C1DAA61BB6AA8F005AA67B /* FloatInputValidator.m */,
+				14D09CA71BB96E54001CF6B1 /* CardExpirationDateInputValidator.h */,
+				14D09CA81BB96E54001CF6B1 /* CardExpirationDateInputValidator.m */,
 			);
 			name = Source;
 			path = ../Source;
@@ -140,10 +148,10 @@
 		146D728B1AB782920058798C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = PREFIX;
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "COMPANY NAME";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					146D72AB1AB782920058798C = {
 						CreatedOnToolsVersion = 6.2;
@@ -185,8 +193,10 @@
 			files = (
 				14C1DAAA1BB6AA8F005AA67B /* NumberInputValidator.m in Sources */,
 				14BAB7A21BB53A7700AF3D62 /* Validation.m in Sources */,
+				14D09CAB1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift in Sources */,
 				14C1DAA91BB6AA8F005AA67B /* FloatInputValidator.m in Sources */,
 				14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */,
+				14D09CA91BB96E54001CF6B1 /* CardExpirationDateInputValidator.m in Sources */,
 				14BAB7A51BB53A7700AF3D62 /* NameInputValidator.m in Sources */,
 				14BAB7A41BB53A7700AF3D62 /* InputValidator.m in Sources */,
 			);
