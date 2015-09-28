@@ -13,21 +13,29 @@
             }
             [mixedString insertString:replacementString atIndex:range.location];
             NSString *composedString = [mixedString copy];
+
             if (composedString.length > 0) {
-                if (composedString.length == 1) {
+                BOOL isFirstCharacter = (composedString.length == 1);
+                BOOL isSecondCharacter = (composedString.length == 2);
+                BOOL isThirdCharacter = (composedString.length == 3);
+                BOOL isFourthCharacter = (composedString.length == 4);
+                BOOL isFifthCharacter = (composedString.length == 5);
+
+                if (isFirstCharacter) {
                     valid = ([composedString isEqualToString:@"0"] ||
                              [composedString isEqualToString:@"1"]);
-                } else if (composedString.length == 2 || composedString.length == 3) {
-                    if (composedString.length == 3) {
-                        composedString = [composedString substringToIndex:[@"12" length]];
+                } else if (isSecondCharacter || isThirdCharacter) {
+                    if (isThirdCharacter) {
+                        composedString = [composedString substringToIndex:[@"MM" length]];
                     }
 
                     NSNumberFormatter *formatter = [NSNumberFormatter new];
                     formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
                     NSNumber *number = [formatter numberFromString:composedString];
-                    valid = (number.integerValue > 0 && number.integerValue <= 12);
-                } else if (composedString.length == 4 || composedString.length == 5) {
-                    composedString = [composedString substringFromIndex:[@"01/" length]];
+                    NSInteger maximumMonth = 12;
+                    valid = (number.integerValue > 0 && number.integerValue <= maximumMonth);
+                } else if (isFourthCharacter || isFifthCharacter) {
+                    composedString = [composedString substringFromIndex:[@"MM/" length]];
 
                     NSNumberFormatter *formatter = [NSNumberFormatter new];
                     formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
@@ -40,9 +48,11 @@
                     NSInteger basicYear = year - (century * 100);
                     NSInteger decade = floor(basicYear / 10.0);
 
-                    if (composedString.length == 1) {
+                    BOOL isDecimal = (composedString.length == 1);
+                    BOOL isYear = (composedString.length == 2);
+                    if (isDecimal) {
                         valid = (number.integerValue >= decade);
-                    } else if (composedString.length == 2) {
+                    } else if (isYear) {
                         valid = (number.integerValue >= basicYear);
                     }
                 }
