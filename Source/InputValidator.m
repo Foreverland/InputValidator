@@ -63,15 +63,15 @@
     if (text && valid && (self.validation.maximumValue || self.validation.minimumValue)) {
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
-        NSNumber *newValue = [formatter numberFromString:evaluatedString];
+        NSNumber *number = [formatter numberFromString:evaluatedString];
 
-        if (newValue) {
+        if (number) {
             if (self.validation.maximumValue) {
-                valid = ([newValue floatValue] <= [self.validation.maximumValue floatValue]);
+                valid = ([number floatValue] <= [self.validation.maximumValue floatValue]);
             }
 
             if (valid && self.validation.minimumValue) {
-                valid = ([newValue floatValue] >= [self.validation.minimumValue floatValue]);
+                valid = ([number floatValue] >= [self.validation.minimumValue floatValue]);
             }
         }
     }
