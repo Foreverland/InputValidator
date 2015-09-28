@@ -31,10 +31,14 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
         XCTAssertFalse(validator.validateReplacementString("3", withText: "1", withRange: NSRange(location: secondCharacterLenght, length: secondCharacterLenght + 1)))
 
         // 3rd character: The third character is the '\'
+        let thirdCharacter = "MM"
+        let thirdCharacterLenght = thirdCharacter.characters.count
+        XCTAssertFalse(validator.validateReplacementString("0", withText: "12", withRange: NSRange(location: thirdCharacterLenght, length: thirdCharacterLenght + 1)))
+        XCTAssertTrue(validator.validateReplacementString("/", withText: "12", withRange: NSRange(location: thirdCharacterLenght, length: thirdCharacterLenght + 1)))
 
         // 4th character: The fourth character has to be higher than the decimal of the current year.
         // For example if the current year is 2015, then the fourth character has to be equal or higher than 1
-        let fourthCharacter = "12/"
+        let fourthCharacter = "MM/"
         let fourthCharacterLenght = fourthCharacter.characters.count
         XCTAssertFalse(validator.validateReplacementString("0", withText: "12/", withRange: NSRange(location: fourthCharacterLenght, length: fourthCharacterLenght + 1)))
         XCTAssertTrue(validator.validateReplacementString("1", withText: "12/", withRange: NSRange(location: fourthCharacterLenght, length: fourthCharacterLenght + 1)))
@@ -42,7 +46,7 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
 
         // 5th character: The fifth character composed with the fourth character should be equal or higher than 
         // the decimal of the current year
-        let fifthCharacter = "12/1"
+        let fifthCharacter = "MM/1"
         let fifthCharacterLenght = fifthCharacter.characters.count
         XCTAssertFalse(validator.validateReplacementString("4", withText: "12/1", withRange: NSRange(location: fifthCharacterLenght, length: fifthCharacterLenght + 1)))
         XCTAssertTrue(validator.validateReplacementString("5", withText: "12/1", withRange: NSRange(location: fifthCharacterLenght, length: fifthCharacterLenght + 1)))

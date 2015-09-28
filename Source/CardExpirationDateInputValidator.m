@@ -23,9 +23,7 @@
 
                 NSNumber *number;
                 if (!isFirstCharacter) {
-                    if (isThirdCharacter) {
-                        composedString = [composedString substringToIndex:[@"MM" length]];
-                    } else if (isFourthCharacter || isFifthCharacter) {
+                    if (isFourthCharacter || isFifthCharacter) {
                         composedString = [composedString substringFromIndex:[@"MM/" length]];
                     }
 
@@ -34,13 +32,15 @@
                     number = [formatter numberFromString:composedString];
                 }
 
-
                 if (isFirstCharacter) {
                     valid = ([composedString isEqualToString:@"0"] ||
                              [composedString isEqualToString:@"1"]);
-                } else if (isSecondCharacter || isThirdCharacter) {
+                } else if (isSecondCharacter) {
                     NSInteger maximumMonth = 12;
                     valid = (number.integerValue > 0 && number.integerValue <= maximumMonth);
+                } else if (isThirdCharacter) {
+                    composedString = [composedString substringFromIndex:[@"MM" length]];
+                    valid = ([composedString isEqualToString:@"/"]);
                 } else if (isFourthCharacter || isFifthCharacter) {
                     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
                     NSInteger year = [components year];
@@ -60,7 +60,7 @@
             }
         }
     }
-
+    
     return valid;
 }
 

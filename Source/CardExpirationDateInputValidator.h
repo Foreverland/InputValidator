@@ -1,5 +1,5 @@
 #import "NumberInputValidator.h"
 
-@interface CardExpirationDateInputValidator : NumberInputValidator
+@interface CardExpirationDateInputValidator : InputValidator
 
 @end
