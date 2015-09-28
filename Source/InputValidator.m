@@ -21,77 +21,42 @@
     return [self validateReplacementString:nil withText:string withRange:NSMakeRange(0, 0)];
 }
 
-- (BOOL)validateReplacementString:(NSString *)replacementString withText:(NSString *)text withRange:(NSRange)range {
-    BOOL shouldSkipValidations = (!self.validation);
-    if (shouldSkipValidations) {
-        return YES;
-    }
+- (BOOL)validateReplacementString:(NSString *)string withText:(NSString *)text withRange:(NSRange)range {
+    BOOL shouldSkipValidations = (text.length == 0 || string.length == 0 || !self.validation);
+    if (shouldSkipValidations) return YES;
 
-    NSString *evaluatedString = text;
+    NSUInteger textLength = [text length];
+
+    if (string.length > 0) {
+        textLength++;
+    }
 
     BOOL valid = YES;
 
-    if (self.validation.required == YES && !self.validation.minimumLength) {
-        self.validation.minimumLength = @1;
+    if (self.validation.maximumLength) {
+        valid = (textLength <= [self.validation.maximumLength unsignedIntegerValue]);
     }
 
-    if (self.validation.maximumLength || self.validation.minimumLength) {
-        NSUInteger textLength = text.length;
-
-        if (replacementString.length > 0) {
-            textLength += replacementString.length;
-        }
-
-        if (self.validation.maximumLength) {
-            valid = (textLength <= [self.validation.maximumLength unsignedIntegerValue]);
-        }
-
-        if (valid && self.validation.minimumLength) {
-            valid = (textLength >= [self.validation.minimumLength unsignedIntegerValue]);
-        }
-    }
-
-    if (replacementString) {
-        NSMutableString *composedString = [NSMutableString new];
-        if (text) {
-            [composedString appendString:text];
-        }
-        [composedString insertString:replacementString atIndex:range.location];
-        evaluatedString = [composedString copy];
-    }
-
-    if (text && valid && (self.validation.maximumValue || self.validation.minimumValue)) {
+    if (self.validation.maximumValue && text) {
+        NSMutableString *newString = [[NSMutableString alloc] initWithString:text];
+        [newString insertString:string atIndex:range.location];
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
-        NSNumber *number = [formatter numberFromString:evaluatedString];
+        NSNumber *newValue = [formatter numberFromString:newString];
+        NSNumber *maxValue = self.validation.maximumValue;
 
-        if (number) {
-            if (self.validation.maximumValue) {
-                valid = ([number floatValue] <= [self.validation.maximumValue floatValue]);
-            }
-
-            if (valid && self.validation.minimumValue) {
-                valid = ([number floatValue] >= [self.validation.minimumValue floatValue]);
-            }
-        }
+        BOOL eligibleForCompare = (newValue && maxValue);
+        if (eligibleForCompare) valid = ([newValue floatValue] <= [maxValue floatValue]);
     }
-
-    /*if (valid && self.validation.format) {
-        NSError *formattingError = nil;
-        valid = [self validateString:evaluatedString withFormat:self.validation.format error:&formattingError];
-        if (formattingError) {
-            NSLog(@"There was a problem checking the format of %@ (Format: %@, Error: %@)", evaluatedString, self.validation.format, formattingError);
-        }
-    }*/
 
     return valid;
 }
 
-- (BOOL)validateString:(NSString *)fieldValue withFormat:(NSString *)format error:(NSError **)error {
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:format options:NSRegularExpressionCaseInsensitive error:error];
-    NSRange range = [regex rangeOfFirstMatchInString:fieldValue options:NSMatchingReportProgress range:NSMakeRange(0, fieldValue.length)];
-
-    return (range.location == 0 && range.length == fieldValue.length);
+- (BOOL)validateString:(NSString *)fieldValue withFormat:(NSString *)format {
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:format options:NSRegularExpressionCaseInsensitive error:&error];
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString:fieldValue options:NSMatchingReportProgress range:NSMakeRange(0, fieldValue.length)];
+    return (numberOfMatches > 0);
 }
 
 @end

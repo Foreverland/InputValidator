@@ -24,7 +24,7 @@ class InputValidatorTests: XCTestCase {
         XCTAssertFalse(validator.validateString("Elvis Nunez"))
     }*/
 
-    func testMaximumLengthValidation() {
+    /*func testMaximumLengthValidation() {
         let validation = Validation()
         validation.maximumLength = NSNumber(int: 5)
 
@@ -95,5 +95,5 @@ class InputValidatorTests: XCTestCase {
         let validator = InputValidator(validation: validation)
         XCTAssertTrue(validator.validateString("12345"))
         XCTAssertFalse(validator.validateString(""))
-    }
+    }*/
 }
