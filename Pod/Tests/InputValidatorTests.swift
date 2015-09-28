@@ -2,8 +2,7 @@ import UIKit
 import XCTest
 
 class InputValidatorTests: XCTestCase {
-
-    func testValidateReplacementStringWithEmailFormat() {
+    /*func testValidateReplacementStringWithEmailFormat() {
         let validation = Validation()
         validation.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
 
@@ -23,7 +22,7 @@ class InputValidatorTests: XCTestCase {
         XCTAssertTrue(validator.validateString("elvisnunez@me.com"))
         XCTAssertFalse(validator.validateString("elvisnunez[@]me.com"))
         XCTAssertFalse(validator.validateString("Elvis Nunez"))
-    }
+    }*/
 
     func testMaximumLengthValidation() {
         let validation = Validation()

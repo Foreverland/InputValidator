@@ -76,13 +76,13 @@
         }
     }
 
-    if (valid && self.validation.format) {
+    /*if (valid && self.validation.format) {
         NSError *formattingError = nil;
         valid = [self validateString:evaluatedString withFormat:self.validation.format error:&formattingError];
         if (formattingError) {
             NSLog(@"There was a problem checking the format of %@ (Format: %@, Error: %@)", evaluatedString, self.validation.format, formattingError);
         }
-    }
+    }*/
 
     return valid;
 }
