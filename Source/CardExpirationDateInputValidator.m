@@ -28,7 +28,6 @@
                     }
 
                     NSNumberFormatter *formatter = [NSNumberFormatter new];
-                    formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
                     number = [formatter numberFromString:composedString];
                 }
 
