@@ -21,26 +21,27 @@
                 BOOL isFourthCharacter = (composedString.length == 4);
                 BOOL isFifthCharacter = (composedString.length == 5);
 
-                if (isFirstCharacter) {
-                    valid = ([composedString isEqualToString:@"0"] ||
-                             [composedString isEqualToString:@"1"]);
-                } else if (isSecondCharacter || isThirdCharacter) {
+                NSNumber *number;
+                if (!isFirstCharacter) {
                     if (isThirdCharacter) {
                         composedString = [composedString substringToIndex:[@"MM" length]];
+                    } else if (isFourthCharacter || isFifthCharacter) {
+                        composedString = [composedString substringFromIndex:[@"MM/" length]];
                     }
 
                     NSNumberFormatter *formatter = [NSNumberFormatter new];
                     formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
-                    NSNumber *number = [formatter numberFromString:composedString];
+                    number = [formatter numberFromString:composedString];
+                }
+
+
+                if (isFirstCharacter) {
+                    valid = ([composedString isEqualToString:@"0"] ||
+                             [composedString isEqualToString:@"1"]);
+                } else if (isSecondCharacter || isThirdCharacter) {
                     NSInteger maximumMonth = 12;
                     valid = (number.integerValue > 0 && number.integerValue <= maximumMonth);
                 } else if (isFourthCharacter || isFifthCharacter) {
-                    composedString = [composedString substringFromIndex:[@"MM/" length]];
-
-                    NSNumberFormatter *formatter = [NSNumberFormatter new];
-                    formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
-                    NSNumber *number = [formatter numberFromString:composedString];
-
                     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
                     NSInteger year = [components year];
 
