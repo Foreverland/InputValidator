@@ -1,6 +1,6 @@
 import Foundation
 
-public struct DoubleInputValidator: Validatable {
+public struct DecimalInputValidator: Validatable {
     var validation: Validation
 
     public init(validation: Validation) {

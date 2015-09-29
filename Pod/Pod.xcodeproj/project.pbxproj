@@ -12,10 +12,10 @@
 		1462EAE51BB9FF6A00AD6613 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE41BB9FF6A00AD6613 /* Validation.swift */; settings = {ASSET_TAGS = (); }; };
 		1462EAE71BB9FF7200AD6613 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE61BB9FF7200AD6613 /* InputValidator.swift */; settings = {ASSET_TAGS = (); }; };
 		1462EAE91BBA004D00AD6613 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE81BBA004D00AD6613 /* Validatable.swift */; settings = {ASSET_TAGS = (); }; };
-		147621141BBA55B500C8B224 /* DoubleInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147621131BBA55B500C8B224 /* DoubleInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
+		147621141BBA55B500C8B224 /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147621131BBA55B500C8B224 /* DecimalInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
 		147621161BBA55BD00C8B224 /* NameInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147621151BBA55BD00C8B224 /* NameInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
 		147621181BBA55C500C8B224 /* IntegerInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147621171BBA55C500C8B224 /* IntegerInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
-		1476211A1BBA561000C8B224 /* DoubleInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147621191BBA561000C8B224 /* DoubleInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
+		1476211A1BBA561000C8B224 /* DecimalInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147621191BBA561000C8B224 /* DecimalInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		1476211C1BBA563300C8B224 /* NameInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1476211B1BBA563300C8B224 /* NameInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		1476211E1BBA565400C8B224 /* IntegerInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1476211D1BBA565400C8B224 /* IntegerInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
@@ -29,10 +29,10 @@
 		1462EAE81BBA004D00AD6613 /* Validatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validatable.swift; sourceTree = "<group>"; };
 		146D72AC1AB782920058798C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146D72B11AB782920058798C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		147621131BBA55B500C8B224 /* DoubleInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleInputValidator.swift; sourceTree = "<group>"; };
+		147621131BBA55B500C8B224 /* DecimalInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalInputValidator.swift; sourceTree = "<group>"; };
 		147621151BBA55BD00C8B224 /* NameInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInputValidator.swift; sourceTree = "<group>"; };
 		147621171BBA55C500C8B224 /* IntegerInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerInputValidator.swift; sourceTree = "<group>"; };
-		147621191BBA561000C8B224 /* DoubleInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleInputValidatorTests.swift; sourceTree = "<group>"; };
+		147621191BBA561000C8B224 /* DecimalInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalInputValidatorTests.swift; sourceTree = "<group>"; };
 		1476211B1BBA563300C8B224 /* NameInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInputValidatorTests.swift; sourceTree = "<group>"; };
 		1476211D1BBA565400C8B224 /* IntegerInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerInputValidatorTests.swift; sourceTree = "<group>"; };
 		14C136511AB784B200B7B07A /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			children = (
 				14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */,
 				142EF3931BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift */,
-				147621191BBA561000C8B224 /* DoubleInputValidatorTests.swift */,
+				147621191BBA561000C8B224 /* DecimalInputValidatorTests.swift */,
 				1476211B1BBA563300C8B224 /* NameInputValidatorTests.swift */,
 				1476211D1BBA565400C8B224 /* IntegerInputValidatorTests.swift */,
 				146D72B01AB782920058798C /* Supporting Files */,
@@ -112,7 +112,7 @@
 				1462EAE61BB9FF7200AD6613 /* InputValidator.swift */,
 				1462EAE81BBA004D00AD6613 /* Validatable.swift */,
 				142EF3951BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift */,
-				147621131BBA55B500C8B224 /* DoubleInputValidator.swift */,
+				147621131BBA55B500C8B224 /* DecimalInputValidator.swift */,
 				147621151BBA55BD00C8B224 /* NameInputValidator.swift */,
 				147621171BBA55C500C8B224 /* IntegerInputValidator.swift */,
 			);
@@ -191,7 +191,7 @@
 			files = (
 				142EF3961BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift in Sources */,
 				1476211C1BBA563300C8B224 /* NameInputValidatorTests.swift in Sources */,
-				147621141BBA55B500C8B224 /* DoubleInputValidator.swift in Sources */,
+				147621141BBA55B500C8B224 /* DecimalInputValidator.swift in Sources */,
 				147621181BBA55C500C8B224 /* IntegerInputValidator.swift in Sources */,
 				147621161BBA55BD00C8B224 /* NameInputValidator.swift in Sources */,
 				1462EAE51BB9FF6A00AD6613 /* Validation.swift in Sources */,
@@ -199,7 +199,7 @@
 				142EF3941BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift in Sources */,
 				1476211E1BBA565400C8B224 /* IntegerInputValidatorTests.swift in Sources */,
 				1462EAE91BBA004D00AD6613 /* Validatable.swift in Sources */,
-				1476211A1BBA561000C8B224 /* DoubleInputValidatorTests.swift in Sources */,
+				1476211A1BBA561000C8B224 /* DecimalInputValidatorTests.swift in Sources */,
 				14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
