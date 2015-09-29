@@ -5,4 +5,6 @@ public struct Validation {
     public var maximumValue: Double? = nil
     public var minimumValue: Double? = nil
     public var required: Bool? = nil
+
+    init() { }
 }
