@@ -7,37 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14BAB7A21BB53A7700AF3D62 /* Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BAB7921BB53A7700AF3D62 /* Validation.m */; settings = {ASSET_TAGS = (); }; };
-		14BAB7A41BB53A7700AF3D62 /* InputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BAB7961BB53A7700AF3D62 /* InputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14BAB7A51BB53A7700AF3D62 /* NameInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BAB7981BB53A7700AF3D62 /* NameInputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14C1DAA91BB6AA8F005AA67B /* FloatInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAA61BB6AA8F005AA67B /* FloatInputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14C1DAAA1BB6AA8F005AA67B /* NumberInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1DAA81BB6AA8F005AA67B /* NumberInputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14D09CA91BB96E54001CF6B1 /* CardExpirationDateInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D09CA81BB96E54001CF6B1 /* CardExpirationDateInputValidator.m */; settings = {ASSET_TAGS = (); }; };
-		14D09CAB1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D09CAA1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
+		1462EAE51BB9FF6A00AD6613 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE41BB9FF6A00AD6613 /* Validation.swift */; settings = {ASSET_TAGS = (); }; };
+		1462EAE71BB9FF7200AD6613 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE61BB9FF7200AD6613 /* InputValidator.swift */; settings = {ASSET_TAGS = (); }; };
+		1462EAE91BBA004D00AD6613 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE81BBA004D00AD6613 /* Validatable.swift */; settings = {ASSET_TAGS = (); }; };
 		14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1462EAE41BB9FF6A00AD6613 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		1462EAE61BB9FF7200AD6613 /* InputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
+		1462EAE81BBA004D00AD6613 /* Validatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validatable.swift; sourceTree = "<group>"; };
 		146D72AC1AB782920058798C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146D72B11AB782920058798C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14A139B21AEFC72B00AD732F /* Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Bridging-Header.h"; sourceTree = "<group>"; };
-		14BAB7911BB53A7700AF3D62 /* Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validation.h; sourceTree = "<group>"; };
-		14BAB7921BB53A7700AF3D62 /* Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validation.m; sourceTree = "<group>"; };
-		14BAB7951BB53A7700AF3D62 /* InputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputValidator.h; sourceTree = "<group>"; };
-		14BAB7961BB53A7700AF3D62 /* InputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputValidator.m; sourceTree = "<group>"; };
-		14BAB7971BB53A7700AF3D62 /* NameInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameInputValidator.h; sourceTree = "<group>"; };
-		14BAB7981BB53A7700AF3D62 /* NameInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameInputValidator.m; sourceTree = "<group>"; };
 		14C136511AB784B200B7B07A /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		14C136521AB784B200B7B07A /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 		14C136541AB784B200B7B07A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		14C136551AB784B200B7B07A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		14C1DAA51BB6AA8F005AA67B /* FloatInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatInputValidator.h; sourceTree = "<group>"; };
-		14C1DAA61BB6AA8F005AA67B /* FloatInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatInputValidator.m; sourceTree = "<group>"; };
-		14C1DAA71BB6AA8F005AA67B /* NumberInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberInputValidator.h; sourceTree = "<group>"; };
-		14C1DAA81BB6AA8F005AA67B /* NumberInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberInputValidator.m; sourceTree = "<group>"; };
-		14D09CA71BB96E54001CF6B1 /* CardExpirationDateInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardExpirationDateInputValidator.h; sourceTree = "<group>"; };
-		14D09CA81BB96E54001CF6B1 /* CardExpirationDateInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardExpirationDateInputValidator.m; sourceTree = "<group>"; };
-		14D09CAA1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidatorTests.swift; sourceTree = "<group>"; };
 		14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,9 +60,7 @@
 		146D72AF1AB782920058798C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				14D09CAA1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift */,
 				14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */,
-				14A139B21AEFC72B00AD732F /* Tests-Bridging-Header.h */,
 				146D72B01AB782920058798C /* Supporting Files */,
 			);
 			path = Tests;
@@ -105,18 +88,9 @@
 		14C1365B1AB784BC00B7B07A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				14BAB7911BB53A7700AF3D62 /* Validation.h */,
-				14BAB7921BB53A7700AF3D62 /* Validation.m */,
-				14BAB7951BB53A7700AF3D62 /* InputValidator.h */,
-				14BAB7961BB53A7700AF3D62 /* InputValidator.m */,
-				14BAB7971BB53A7700AF3D62 /* NameInputValidator.h */,
-				14BAB7981BB53A7700AF3D62 /* NameInputValidator.m */,
-				14C1DAA71BB6AA8F005AA67B /* NumberInputValidator.h */,
-				14C1DAA81BB6AA8F005AA67B /* NumberInputValidator.m */,
-				14C1DAA51BB6AA8F005AA67B /* FloatInputValidator.h */,
-				14C1DAA61BB6AA8F005AA67B /* FloatInputValidator.m */,
-				14D09CA71BB96E54001CF6B1 /* CardExpirationDateInputValidator.h */,
-				14D09CA81BB96E54001CF6B1 /* CardExpirationDateInputValidator.m */,
+				1462EAE41BB9FF6A00AD6613 /* Validation.swift */,
+				1462EAE61BB9FF7200AD6613 /* InputValidator.swift */,
+				1462EAE81BBA004D00AD6613 /* Validatable.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -191,14 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C1DAAA1BB6AA8F005AA67B /* NumberInputValidator.m in Sources */,
-				14BAB7A21BB53A7700AF3D62 /* Validation.m in Sources */,
-				14D09CAB1BB96EBA001CF6B1 /* CardExpirationDateInputValidatorTests.swift in Sources */,
-				14C1DAA91BB6AA8F005AA67B /* FloatInputValidator.m in Sources */,
+				1462EAE51BB9FF6A00AD6613 /* Validation.swift in Sources */,
+				1462EAE71BB9FF7200AD6613 /* InputValidator.swift in Sources */,
+				1462EAE91BBA004D00AD6613 /* Validatable.swift in Sources */,
 				14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */,
-				14D09CA91BB96E54001CF6B1 /* CardExpirationDateInputValidator.m in Sources */,
-				14BAB7A51BB53A7700AF3D62 /* NameInputValidator.m in Sources */,
-				14BAB7A41BB53A7700AF3D62 /* InputValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +268,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bakkenbaeck.labs.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tests/Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -315,7 +284,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bakkenbaeck.labs.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tests/Tests-Bridging-Header.h";
 			};
 			name = Release;
 		};
