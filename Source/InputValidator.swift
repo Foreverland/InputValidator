@@ -1,4 +1,5 @@
 import Foundation
+import Validation
 
 public struct InputValidator: Validatable {
     var validation: Validation
@@ -8,10 +9,10 @@ public struct InputValidator: Validatable {
     }
 
     public func validateString(string: String) -> Bool {
-        return self.validateReplacementString(nil, usingFullString: string, inRange: nil)
+        return self.validateReplacementString(nil, usingFullString: string, inRange: nil, exhaustive: true)
     }
 
-    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
+    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?, exhaustive: Bool = false) -> Bool {
         let text = fullString ?? ""
         var evaluatedString = text
         var valid = true
@@ -20,41 +21,7 @@ public struct InputValidator: Validatable {
             evaluatedString = self.composedString(replacementString, text: text, inRange: range)
         }
 
-        if let maximumLength = self.validation.maximumLength {
-            valid = (evaluatedString.characters.count <= maximumLength)
-        }
-
-        if valid {
-            var minimumLength: Int? = nil
-
-            if let required = self.validation.required where required == true {
-                minimumLength = 1
-            }
-
-            if let validationMinimumLength = self.validation.minimumLength {
-                minimumLength = validationMinimumLength
-            }
-
-            if let minimumLength = minimumLength {
-                valid = (evaluatedString.characters.count >= minimumLength)
-            }
-        }
-
-        if valid {
-            let formatter = NSNumberFormatter()
-            let number = formatter.numberFromString(evaluatedString)
-            if let number = number {
-                if let maximumValue = self.validation.maximumValue {
-                    valid = (number.doubleValue <= maximumValue)
-                }
-
-                if valid {
-                    if let minimumValue = self.validation.minimumValue {
-                        valid = (number.doubleValue >= minimumValue)
-                    }
-                }
-            }
-        }
+        valid = self.validation.validateString(evaluatedString, exhaustive: exhaustive)
 
         return valid
     }
