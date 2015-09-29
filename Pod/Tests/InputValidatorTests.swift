@@ -27,7 +27,7 @@ class InputValidatorTests: XCTestCase {
     func testNullability() {
         let validation = Validation()
         let validator = InputValidator(validation: validation)
-        XCTAssertTrue(validator.validateReplacementString(nil, fullText: nil, range: nil))
+        XCTAssertTrue(validator.validateReplacementString(nil, usingFullString: nil, inRange: nil))
     }
 
     func testMaximumLengthValidation() {

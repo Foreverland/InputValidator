@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142EF3941BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EF3931BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
+		142EF3961BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EF3951BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
 		1462EAE51BB9FF6A00AD6613 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE41BB9FF6A00AD6613 /* Validation.swift */; settings = {ASSET_TAGS = (); }; };
 		1462EAE71BB9FF7200AD6613 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE61BB9FF7200AD6613 /* InputValidator.swift */; settings = {ASSET_TAGS = (); }; };
 		1462EAE91BBA004D00AD6613 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462EAE81BBA004D00AD6613 /* Validatable.swift */; settings = {ASSET_TAGS = (); }; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142EF3931BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidatorTests.swift; sourceTree = "<group>"; };
+		142EF3951BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidator.swift; sourceTree = "<group>"; };
 		1462EAE41BB9FF6A00AD6613 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		1462EAE61BB9FF7200AD6613 /* InputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
 		1462EAE81BBA004D00AD6613 /* Validatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validatable.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				14DAC67C1BB66F550019BA92 /* InputValidatorTests.swift */,
+				142EF3931BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift */,
 				146D72B01AB782920058798C /* Supporting Files */,
 			);
 			path = Tests;
@@ -91,6 +96,7 @@
 				1462EAE41BB9FF6A00AD6613 /* Validation.swift */,
 				1462EAE61BB9FF7200AD6613 /* InputValidator.swift */,
 				1462EAE81BBA004D00AD6613 /* Validatable.swift */,
+				142EF3951BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -165,8 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142EF3961BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift in Sources */,
 				1462EAE51BB9FF6A00AD6613 /* Validation.swift in Sources */,
 				1462EAE71BB9FF7200AD6613 /* InputValidator.swift in Sources */,
+				142EF3941BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift in Sources */,
 				1462EAE91BBA004D00AD6613 /* Validatable.swift in Sources */,
 				14DAC67D1BB66F550019BA92 /* InputValidatorTests.swift in Sources */,
 			);

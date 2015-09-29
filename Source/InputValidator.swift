@@ -7,18 +7,19 @@ public struct InputValidator: Validatable {
         self.validation = validation
     }
 
-    public func validateString(text: String) -> Bool {
-        return self.validateReplacementString(nil, fullText: text, range: nil)
+    public func validateString(string: String) -> Bool {
+        return self.validateReplacementString(nil, usingFullString: string, inRange: nil)
     }
 
-    public func validateReplacementString(replacementString: String?, fullText: String?, range: NSRange?) -> Bool {
-        let text = fullText ?? ""
+    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
+        let text = fullString ?? ""
         var evaluatedString = text
         var valid = true
 
         if let replacementString = replacementString, range = range {
-            let composedString = text
-            composedString.insert(replacementString, atIndex: range.location)
+            var composedString = text
+            let index = composedString.startIndex.advancedBy(range.location)
+            composedString.insertContentsOf(replacementString.characters, at: index)
             evaluatedString = composedString
         }
 
@@ -59,11 +60,5 @@ public struct InputValidator: Validatable {
         }
 
         return valid
-    }
-}
-
-extension String {
-    func insert(string: String, atIndex index: Int) -> String {
-        return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count - index))
     }
 }

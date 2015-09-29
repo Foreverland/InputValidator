@@ -1,6 +1,6 @@
 import Foundation
 
 protocol Validatable {
-    func validateString(fullText: String) -> Bool
-    func validateReplacementString(replacementString: String?, fullText: String?, range: NSRange?) -> Bool
+    func validateString(string: String) -> Bool
+    func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool
 }
