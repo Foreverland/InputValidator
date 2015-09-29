@@ -1,0 +1,10 @@
+PODS:
+  - Validation (0.1.0)
+
+DEPENDENCIES:
+  - Validation
+
+SPEC CHECKSUMS:
+  Validation: e528df9a56609a96bd62a1edbeeb03ccc3ab7b5f
+
+COCOAPODS: 0.38.2
