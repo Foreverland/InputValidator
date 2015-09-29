@@ -11,7 +11,7 @@ public struct IntegerInputValidator: Validatable {
         return self.validateReplacementString(nil, usingFullString: string, inRange: nil)
     }
 
-    func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
+    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
         let baseInputValidator = InputValidator(validation: self.validation)
         var valid = baseInputValidator.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)
         if valid {
