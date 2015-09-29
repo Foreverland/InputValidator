@@ -35,9 +35,9 @@ It also helps you verify if a string should be inserted into another string, use
 
 ## Included built-in input validators
 
-- Float
+- Double
+- Integer
 - Name
-- Number
 
 ## Installation
 
