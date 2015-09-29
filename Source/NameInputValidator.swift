@@ -10,7 +10,7 @@ public struct NameInputValidator: Validatable {
 
     public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?, exhaustive: Bool = false) -> Bool {
         let baseInputValidator = InputValidator(validation: self.validation)
-        var valid = baseInputValidator.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)
+        var valid = baseInputValidator.validateReplacementString(replacementString, usingFullString: fullString, inRange: range, exhaustive: exhaustive)
         if valid {
             if let replacementString = replacementString {
                 let letterCharacterSet = NSCharacterSet.letterCharacterSet()
