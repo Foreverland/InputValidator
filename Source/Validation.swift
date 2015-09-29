@@ -6,5 +6,5 @@ public struct Validation {
     public var minimumValue: Double? = nil
     public var required: Bool? = nil
 
-    init() { }
+    public init() { }
 }
