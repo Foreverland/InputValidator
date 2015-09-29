@@ -17,10 +17,7 @@ public struct InputValidator: Validatable {
         var valid = true
 
         if let replacementString = replacementString, range = range {
-            var composedString = text
-            let index = composedString.startIndex.advancedBy(range.location)
-            composedString.insertContentsOf(replacementString.characters, at: index)
-            evaluatedString = composedString
+            evaluatedString = self.composedString(replacementString, text: text, inRange: range)
         }
 
         if let maximumLength = self.validation.maximumLength {
@@ -60,5 +57,16 @@ public struct InputValidator: Validatable {
         }
 
         return valid
+    }
+
+    public func composedString(replacementString: String, text: String, inRange range: NSRange) -> String {
+        var composedString = text
+        let index = composedString.startIndex.advancedBy(range.location)
+        if range.location == text.characters.count {
+            composedString.insertContentsOf(replacementString.characters, at: index)
+        } else {
+            composedString = (composedString as NSString).stringByReplacingCharactersInRange(range, withString: replacementString)
+        }
+        return composedString
     }
 }
