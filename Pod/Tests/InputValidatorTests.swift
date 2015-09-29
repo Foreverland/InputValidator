@@ -24,6 +24,12 @@ class InputValidatorTests: XCTestCase {
         XCTAssertFalse(validator.validateString("Elvis Nunez"))
     }*/
 
+    func testNullability() {
+        let validation = Validation()
+        let validator = InputValidator(validation: validation)
+        XCTAssertTrue(validator.validateReplacementString(nil, fullText: nil, range: nil))
+    }
+
     func testMaximumLengthValidation() {
         var validation = Validation()
         validation.maximumLength = 5

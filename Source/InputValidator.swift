@@ -1,30 +1,29 @@
 import Foundation
 
-struct InputValidator: Validatable {
+public struct InputValidator: Validatable {
     var validation: Validation
 
-    init(validation: Validation) {
+    public init(validation: Validation) {
         self.validation = validation
     }
 
-    func validateString(text: String) -> Bool {
+    public func validateString(text: String) -> Bool {
         return self.validateReplacementString(nil, fullText: text, range: nil)
     }
 
-    func validateReplacementString(replacementString: String?, fullText: String?, range: NSRange?) -> Bool {
+    public func validateReplacementString(replacementString: String?, fullText: String?, range: NSRange?) -> Bool {
         let text = fullText ?? ""
         var evaluatedString = text
         var valid = true
 
-        var textLength = text.characters.count
-        if let replacementString = replacementString {
-            if replacementString.characters.count > 0 {
-                textLength += replacementString.characters.count
-            }
+        if let replacementString = replacementString, range = range {
+            let composedString = text
+            composedString.insert(replacementString, atIndex: range.location)
+            evaluatedString = composedString
         }
 
         if let maximumLength = self.validation.maximumLength {
-            valid = (textLength <= maximumLength)
+            valid = (evaluatedString.characters.count <= maximumLength)
         }
 
         if valid {
@@ -38,13 +37,9 @@ struct InputValidator: Validatable {
                 minimumLength = validationMinimumLength
             }
 
-            valid = (textLength >= minimumLength)
-        }
-
-        if let replacementString = replacementString, range = range {
-            let composedString = text
-            composedString.insert(replacementString, index: range.location)
-            evaluatedString = composedString
+            if let minimumLength = minimumLength {
+                valid = (evaluatedString.characters.count >= minimumLength)
+            }
         }
 
         if valid {
@@ -68,7 +63,7 @@ struct InputValidator: Validatable {
 }
 
 extension String {
-    func insert(string: String, index: Int) -> String {
-        return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count-index))
+    func insert(string: String, atIndex index: Int) -> String {
+        return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count - index))
     }
 }

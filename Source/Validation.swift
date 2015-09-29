@@ -1,4 +1,4 @@
-struct Validation {
+public struct Validation {
     var format: String?
     var maximumLength: Int?
     var minimumLength: Int?
