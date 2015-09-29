@@ -11,10 +11,11 @@ For example if you want to validate that a value is between 5 and 6 you can do t
 
 ```swift
 let validation = Validation()
-validation.minimumValue = NSNumber(int: 5)
-validation.maximumValue = NSNumber(int: 6)
+validation.minimumValue = 5
+validation.maximumValue = 6
 
 var result: Bool
+let validator = InputValidator(validation: validation)
 result = validator.validateString("4") // false
 result = validator.validateString("5") // true
 result = validator.validateString("6") // true
@@ -27,7 +28,7 @@ It also helps you verify if a string should be inserted into another string, use
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (!string || [string isEqualToString:@"\n"]) return YES;
 
-    NumberInputValidator *inputValidator = [NumberInputValidator new];
+    IntegerInputValidator *inputValidator = [IntegerInputValidator new];
     return [inputValidator validateReplacementString:string withText:self.text withRange:range];
 }
 ```
