@@ -1,8 +1,8 @@
 public struct Validation {
-    var format: String?
-    var maximumLength: Int?
-    var minimumLength: Int?
-    var maximumValue: Double?
-    var minimumValue: Double?
-    var required: Bool?
+    public var format: String? = nil
+    public var maximumLength: Int? = nil
+    public var minimumLength: Int? = nil
+    public var maximumValue: Double? = nil
+    public var minimumValue: Double? = nil
+    public var required: Bool? = nil
 }
