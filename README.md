@@ -35,7 +35,8 @@ It also helps you verify if a string should be inserted into another string, use
 
 ## Included built-in input validators
 
-- Double
+- CardExpirationDate
+- Decimal
 - Integer
 - Name
 
