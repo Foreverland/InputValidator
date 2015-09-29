@@ -8,10 +8,6 @@ public struct DecimalInputValidator: Validatable {
         self.validation = validation
     }
 
-    public func validateString(string: String) -> Bool {
-        return self.validateReplacementString(nil, usingFullString: string, inRange: nil)
-    }
-
     public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?, exhaustive: Bool = false) -> Bool {
         let baseInputValidator = InputValidator(validation: self.validation)
         var valid = baseInputValidator.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)

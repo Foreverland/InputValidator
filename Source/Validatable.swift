@@ -9,3 +9,9 @@ public protocol Validatable {
     // will cause the validation to fail, meanwhile making exhaustive be false, will cause the validation to succeed.
     func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?, exhaustive: Bool ) -> Bool
 }
+
+extension Validatable {
+    public func validateString(string: String) -> Bool {
+        return self.validateReplacementString(nil, usingFullString: string, inRange: nil, exhaustive: true)
+    }
+}
