@@ -8,10 +8,6 @@ public struct InputValidator: Validatable {
         self.validation = validation
     }
 
-    public func validateString(string: String) -> Bool {
-        return self.validateReplacementString(nil, usingFullString: string, inRange: nil, exhaustive: true)
-    }
-
     public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?, exhaustive: Bool = false) -> Bool {
         let text = fullString ?? ""
         var evaluatedString = text
