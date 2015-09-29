@@ -1,6 +1,6 @@
 import Foundation
 
-public struct FloatInputValidator: Validatable {
+public struct DoubleInputValidator: Validatable {
     var validation: Validation
 
     public init(validation: Validation) {
