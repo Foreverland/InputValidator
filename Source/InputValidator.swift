@@ -2,13 +2,13 @@ import Foundation
 import Validation
 
 public struct InputValidator: Validatable {
-    var validation: Validation
+    public var validation: Validation
 
     public init(validation: Validation) {
         self.validation = validation
     }
 
-    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?, exhaustive: Bool = false) -> Bool {
+    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
         let text = fullString ?? ""
         var evaluatedString = text
         var valid = true
@@ -17,7 +17,7 @@ public struct InputValidator: Validatable {
             evaluatedString = self.composedString(replacementString, text: text, inRange: range)
         }
 
-        valid = self.validation.validateString(evaluatedString, exhaustive: exhaustive)
+        valid = self.validation.validateString(evaluatedString)
 
         return valid
     }
