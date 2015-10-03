@@ -7,21 +7,14 @@ import Validation
     can be pretty much any number above the current year (this to ensure that the
     card is not expired).
 */
-public struct CardExpirationDateInputValidator: Validatable {
-    public var validation: Validation
-
-    public init(validation: Validation) {
-        self.validation = validation
-    }
-
-    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
-        let baseInputValidator = InputValidator(validation: self.validation)
-        var valid = baseInputValidator.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)
+public class CardExpirationDateInputValidator: InputValidator {
+    public override func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
+        var valid = super.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)
         if valid {
             let text = fullString ?? ""
 
             if let replacementString = replacementString, range = range {
-                var composedString = baseInputValidator.composedString(replacementString, text: text, inRange: range)
+                var composedString = self.composedString(replacementString, text: text, inRange: range)
 
                 if composedString.characters.count > 0 {
                     var precomposedString = composedString

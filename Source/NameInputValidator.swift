@@ -1,16 +1,9 @@
 import Foundation
 import Validation
 
-public struct NameInputValidator: Validatable {
-    public var validation: Validation
-
-    public init(validation: Validation) {
-        self.validation = validation
-    }
-
-    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
-        let baseInputValidator = InputValidator(validation: self.validation)
-        var valid = baseInputValidator.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)
+public class NameInputValidator: InputValidator {
+    public override func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
+        var valid = super.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)
         if valid {
             if let replacementString = replacementString {
                 let letterCharacterSet = NSCharacterSet.letterCharacterSet()
