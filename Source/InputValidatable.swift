@@ -4,6 +4,8 @@ import Validation
 public protocol InputValidatable {
     var validation: Validation? { get }
 
+    init(validation: Validation?)
+
     func validateString(string: String) -> Bool
 
     // This method is useful for partial validations, or validations where the final string is

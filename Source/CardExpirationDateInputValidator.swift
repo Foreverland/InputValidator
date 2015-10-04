@@ -10,7 +10,7 @@ import Validation
 public struct CardExpirationDateInputValidator: InputValidatable {
     public var validation: Validation?
 
-    public init() {
+    public init(validation: Validation? = nil) {
         var validation = Validation()
         let count = "MM/YY".characters.count
         validation.maximumLength = count
