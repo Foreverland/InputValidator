@@ -19,8 +19,11 @@ public struct CardExpirationDateInputValidator: InputValidatable {
     }
 
     public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
-        let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
-        var valid = self.validation!.validateString(evaluatedString)
+        var valid = true
+        if let validation = self.validation {
+            let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            valid = validation.validateString(evaluatedString)
+        }
 
         if valid {
             guard let replacementString = replacementString, range = range else { return valid }

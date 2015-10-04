@@ -4,6 +4,8 @@ import Validation
 public protocol InputValidatable {
     var validation: Validation? { get set }
 
+    init()
+
     func validateString(string: String) -> Bool
 
     // This method is useful for partial validations, or validations where the final string is
@@ -12,6 +14,12 @@ public protocol InputValidatable {
 }
 
 extension InputValidatable {
+    public init(validation: Validation?) {
+        self.init()
+
+        self.validation = validation
+    }
+
     public func validateString(string: String) -> Bool {
         var valid = true
         if let validation = self.validation {
