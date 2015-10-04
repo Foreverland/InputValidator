@@ -4,7 +4,9 @@ import Validation
 public struct DecimalInputValidator: InputValidatable {
     public var validation: Validation?
 
-    public init() { }
+    public init(validation: Validation? = nil) {
+        self.validation = validation
+    }
 
     public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         var valid = true

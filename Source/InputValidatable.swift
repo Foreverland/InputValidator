@@ -2,9 +2,7 @@ import Foundation
 import Validation
 
 public protocol InputValidatable {
-    var validation: Validation? { get set }
-
-    init()
+    var validation: Validation? { get }
 
     func validateString(string: String) -> Bool
 
@@ -14,12 +12,6 @@ public protocol InputValidatable {
 }
 
 extension InputValidatable {
-    public init(validation: Validation?) {
-        self.init()
-
-        self.validation = validation
-    }
-
     public func validateString(string: String) -> Bool {
         var valid = true
         if let validation = self.validation {
