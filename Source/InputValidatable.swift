@@ -1,23 +1,39 @@
 import Foundation
 import Validation
 
-public class InputValidator {
-    public var validation: Validation
+public protocol InputValidatable {
+    var validation: Validation? { get set }
 
-    public init(validation: Validation) {
-        self.validation = validation
-    }
-
-    public func validateString(string: String) -> Bool {
-        return self.validation.validateString(string)
-    }
+    func validateString(string: String) -> Bool
 
     // This method is useful for partial validations, or validations where the final string is
     // in process of been completed. For example when entering characters into an UITextField.
+    func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool
+}
+
+extension InputValidatable {
+    public func validateString(string: String) -> Bool {
+        var valid = true
+        if let validation = self.validation {
+            valid = validation.validateString(string)
+        }
+
+        if valid {
+            valid = self.validateReplacementString(nil, fullString: string, inRange: nil)
+        }
+
+        return valid
+    }
+
     public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
 
-        return self.validation.validateString(evaluatedString)
+        var valid = true
+        if let validation = self.validation {
+            valid = validation.validateString(evaluatedString)
+        }
+
+        return valid
     }
 
     public func composedString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> String {

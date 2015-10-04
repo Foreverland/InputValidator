@@ -4,10 +4,7 @@ import Validation
 
 class CardExpirationDateInputValidatorTests: XCTestCase {
     func testCardExpirationDate() {
-        var validation = Validation()
-        validation.maximumLength = 5
-
-        let validator = CardExpirationDateInputValidator(validation: validation)
+        let validator = CardExpirationDateInputValidator()
         XCTAssertTrue(validator.validateString("12/12"))
 
         // 1st character: First character can be 0, 1

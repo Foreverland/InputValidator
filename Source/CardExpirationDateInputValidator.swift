@@ -7,55 +7,67 @@ import Validation
     can be pretty much any number above the current year (this to ensure that the
     card is not expired).
 */
-public class CardExpirationDateInputValidator: InputValidator {
-    public override func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
-        var valid = super.validateReplacementString(replacementString, fullString: fullString, inRange: range)
+public struct CardExpirationDateInputValidator: InputValidatable {
+    public var validation: Validation?
+
+    public init() {
+        var validation = Validation()
+        let count = "MM/YY".characters.count
+        validation.maximumLength = count
+        validation.minimumLength = 1
+        self.validation = validation
+    }
+
+    public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
+        let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+        var valid = self.validation!.validateString(evaluatedString)
+
         if valid {
-            if let replacementString = replacementString, range = range {
-                var composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            guard let replacementString = replacementString, range = range else { return valid }
 
-                if composedString.characters.count > 0 {
-                    var precomposedString = composedString
-                    if composedString.characters.count == 4 || composedString.characters.count == 5 {
-                        let index = composedString.startIndex.advancedBy("MM/".characters.count)
-                        precomposedString = composedString.substringFromIndex(index)
-                    }
+            var composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
 
-                    let formatter = NSNumberFormatter()
-                    let number = formatter.numberFromString(precomposedString)?.integerValue
-                    if let number = number {
-                        switch composedString.characters.count {
-                        case 1:
-                            valid = (number == 0 || number == 1)
-                            break
-                        case 2:
-                            let maximumMonth = 12
-                            valid = (number > 0 && number <= maximumMonth)
-                            break
-                        case 3:
-                            let index = composedString.startIndex.advancedBy("MM".characters.count)
-                            composedString = composedString.substringFromIndex(index)
-                            valid = (composedString == "/")
-                            break
-                        case 4, 5:
-                            let year = NSCalendar.currentCalendar().component(.Year, fromDate: NSDate())
+            if composedString.characters.count > 0 {
+                var precomposedString = composedString
+                if composedString.characters.count == 4 || composedString.characters.count == 5 {
+                    let index = composedString.startIndex.advancedBy("MM/".characters.count)
+                    precomposedString = composedString.substringFromIndex(index)
+                }
 
-                            let century = floor(Double(year) / 100.0)
-                            let basicYear = Double(year) - (century * 100.0)
-                            let decade = floor(basicYear / 10.0)
+                let formatter = NSNumberFormatter()
+                let number = formatter.numberFromString(precomposedString)?.integerValue
+                if let number = number {
+                    switch composedString.characters.count {
+                    case 1:
+                        valid = (number == 0 || number == 1)
+                        break
+                    case 2:
+                        let maximumMonth = 12
+                        valid = (number > 0 && number <= maximumMonth)
+                        break
+                    case 3:
+                        let index = composedString.startIndex.advancedBy("MM".characters.count)
+                        composedString = composedString.substringFromIndex(index)
+                        valid = (composedString == "/")
+                        break
+                    case 4, 5:
+                        let year = NSCalendar.currentCalendar().component(.Year, fromDate: NSDate())
 
-                            let isDecimal = (precomposedString.characters.count == 1)
-                            let isYear = (precomposedString.characters.count == 2)
-                            if isDecimal {
-                                valid = number >= Int(decade)
-                            } else if isYear {
-                                valid = number >= Int(basicYear)
-                            }
+                        let century = floor(Double(year) / 100.0)
+                        let basicYear = Double(year) - (century * 100.0)
+                        let decade = floor(basicYear / 10.0)
 
-                            break
-                        default:
-                            break
+                        let isDecimal = (precomposedString.characters.count == 1)
+                        let isYear = (precomposedString.characters.count == 2)
+                        if isDecimal {
+                            valid = number >= Int(decade)
+                        } else if isYear {
+                            valid = number >= Int(basicYear)
                         }
+
+                        break
+                    default:
+                        break
                     }
                 }
             }
