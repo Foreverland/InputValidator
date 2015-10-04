@@ -19,11 +19,12 @@ public struct DecimalInputValidator: InputValidatable {
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
             if composedString.characters.count > 0 {
                 let stringSet = NSCharacterSet(charactersInString: composedString)
-                let floatSet = NSCharacterSet(charactersInString: "1234567890,.")
+                let floatSet = NSMutableCharacterSet.decimalDigitCharacterSet()
+                floatSet.addCharactersInString(".,")
                 let hasValidElements = floatSet.isSupersetOfSet(stringSet)
                 if hasValidElements  {
                     let firstElementSet = NSCharacterSet(charactersInString: String(composedString.characters.first!))
-                    let integerSet = NSCharacterSet(charactersInString: "1234567890")
+                    let integerSet = NSCharacterSet.decimalDigitCharacterSet()
                     let firstCharacterIsNumber = integerSet.isSupersetOfSet(firstElementSet)
                     if firstCharacterIsNumber {
                         if replacementString == nil {
