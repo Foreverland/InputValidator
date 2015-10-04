@@ -11,10 +11,8 @@ public class CardExpirationDateInputValidator: InputValidator {
     public override func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         var valid = super.validateReplacementString(replacementString, fullString: fullString, inRange: range)
         if valid {
-            let text = fullString ?? ""
-
             if let replacementString = replacementString, range = range {
-                var composedString = self.composedString(replacementString, fullString: text, inRange: range)
+                var composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
 
                 if composedString.characters.count > 0 {
                     var precomposedString = composedString
