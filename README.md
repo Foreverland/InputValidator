@@ -45,7 +45,7 @@ It also helps you verify if a string should be inserted into another string, use
 
 `InputValidator` includes the `InputValidatable` protocol. Any class that conforms to this protocol can be considered an input validator. For example making an InputValidator that only allows letters could be as simple as this.
 
-```
+```swift
 public struct LetterInputValidator: InputValidatable {
     public var validation: Validation?
 
