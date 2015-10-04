@@ -38,7 +38,6 @@ It also helps you verify if a string should be inserted into another string, use
 - CardExpirationDate
 - Decimal
 - Integer
-- Name
 
 ## Installation
 
