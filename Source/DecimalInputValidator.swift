@@ -1,32 +1,57 @@
 import Foundation
 import Validation
 
-public struct DecimalInputValidator: Validatable {
-    public var validation: Validation
+public struct DecimalInputValidator: InputValidatable {
+    public var validation: Validation?
 
-    public init(validation: Validation) {
+    public init(validation: Validation? = nil) {
         self.validation = validation
     }
 
-    public func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
-        let baseInputValidator = InputValidator(validation: self.validation)
-        var valid = baseInputValidator.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)
+    public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
+        var valid = true
+        if let validation = self.validation {
+            let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            valid = validation.validateString(evaluatedString)
+        }
+
         if valid {
-            if let fullString = fullString, replacementString = replacementString {
-                let hasDelimiter = (fullString.containsString(",") || fullString.containsString("."))
-                let replacementIsDelimiter = (replacementString == "," || replacementString == ".")
-                if hasDelimiter && replacementIsDelimiter {
+            let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            if composedString.characters.count > 0 {
+                let stringSet = NSCharacterSet(charactersInString: composedString)
+                let floatSet = NSCharacterSet(charactersInString: "1234567890,.")
+                let hasValidElements = floatSet.isSupersetOfSet(stringSet)
+                if hasValidElements  {
+                    let firstElementSet = NSCharacterSet(charactersInString: String(composedString.characters.first!))
+                    let integerSet = NSCharacterSet(charactersInString: "1234567890")
+                    let firstCharacterIsNumber = integerSet.isSupersetOfSet(firstElementSet)
+                    if firstCharacterIsNumber {
+                        if replacementString == nil {
+                            let lastElementSet = NSCharacterSet(charactersInString: String(composedString.characters.last!))
+                            let lastCharacterIsInvalid = !integerSet.isSupersetOfSet(lastElementSet)
+                            if lastCharacterIsInvalid {
+                                valid = false
+                            }
+                        }
+
+                        if valid {
+                            let elementsSeparatedByDot = composedString.componentsSeparatedByString(".")
+                            let elementsSeparatedByComma = composedString.componentsSeparatedByString(",")
+                            if elementsSeparatedByDot.count >= 2 && elementsSeparatedByComma.count >= 2 {
+                                valid = false
+                            } else if elementsSeparatedByDot.count > 2 || elementsSeparatedByComma.count > 2 {
+                                valid = false
+                            }
+                        }
+                    } else {
+                        valid = false
+                    }
+                } else {
                     valid = false
                 }
             }
-
-            if let replacementString = replacementString {
-                let floatSet = NSCharacterSet(charactersInString: "1234567890,")
-                let stringSet = NSCharacterSet(charactersInString: replacementString)
-                valid = floatSet.isSupersetOfSet(stringSet)
-            }
         }
-        
+
         return valid
     }
 }
