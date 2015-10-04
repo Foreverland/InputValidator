@@ -1,5 +1,7 @@
 # InputValidator
 
+## Introduction
+
 `InputValidator` is the easiest way to validate a value, things that `InputValidator` lets you validate:
 - Maximum length
 - Minimum length 
@@ -38,6 +40,45 @@ It also helps you verify if a string should be inserted into another string, use
 - CardExpirationDate
 - Decimal
 - Integer
+
+## Making your own input validator
+
+`InputValidator` includes the `InputValidatable` protocol. Any class that conforms to this protocol can be considered an input validator. For example making an InputValidator that only allows letters could be as simple as this.
+
+```
+public struct LetterInputValidator: InputValidatable {
+    public var validation: Validation?
+
+    public init(validation: Validation? = nil) {
+        self.validation = validation
+    }
+
+    public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
+        var valid = true
+        if let validation = self.validation {
+            let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            valid = validation.validateString(evaluatedString)
+        }
+
+        if valid {
+            let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            if composedString.characters.count > 0 {
+                let letterCharacterSet = NSCharacterSet.letterCharacterSet()
+                let stringCharacterSet = NSCharacterSet(charactersInString: composedString)
+                valid = letterCharacterSet.isSupersetOfSet(stringCharacterSet)
+            }
+        }
+
+        return valid
+    }
+}
+
+let validator = LetterInputValidator()
+result = validator.validateString("A") // true
+result = validator.validateString("2") // false
+result = validator.validateString("AA") // true
+result = validator.validateString("A7-w") // false
+```
 
 ## Installation
 
