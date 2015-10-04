@@ -2,8 +2,8 @@ import Foundation
 import Validation
 
 public class IntegerInputValidator: InputValidator {
-    public override func validateReplacementString(replacementString: String?, usingFullString fullString: String?, inRange range: NSRange?) -> Bool {
-        var valid = super.validateReplacementString(replacementString, usingFullString: fullString, inRange: range)
+    public override func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
+        var valid = super.validateReplacementString(replacementString, fullString: fullString, inRange: range)
         if valid {
             if let replacementString = replacementString {
                 let decimalDigitCharacterSet = NSCharacterSet.decimalDigitCharacterSet()
