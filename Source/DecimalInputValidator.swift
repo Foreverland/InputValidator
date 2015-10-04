@@ -30,7 +30,6 @@ public struct DecimalInputValidator: InputValidatable {
                     if firstCharacterIsNumber {
                         if replacementString == nil {
                             let lastElementSet = NSCharacterSet(charactersInString: String(composedString.characters.last!))
-                            let integerSet = NSCharacterSet(charactersInString: "1234567890")
                             let lastCharacterIsInvalid = !integerSet.isSupersetOfSet(lastElementSet)
                             if lastCharacterIsInvalid {
                                 valid = false
