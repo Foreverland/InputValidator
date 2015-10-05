@@ -10,11 +10,11 @@
 		142EF3941BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EF3931BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		142EF3961BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EF3951BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
 		142F96F91BC14520009E514A /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F96F81BC14520009E514A /* InputValidatable.swift */; settings = {ASSET_TAGS = (); }; };
+		143B52841BC1D4AB00C57E78 /* CardNumberInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B52831BC1D4AB00C57E78 /* CardNumberInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
+		143B52861BC1D55900C57E78 /* CardNumberInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B52851BC1D55900C57E78 /* CardNumberInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		1451080E1BC1C876009CD6CD /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451080D1BC1C876009CD6CD /* InputValidator.swift */; settings = {ASSET_TAGS = (); }; };
 		145F9C9D1BC1B61F007034D9 /* DecimalInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145F9C9C1BC1B61F007034D9 /* DecimalInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		145F9C9F1BC1B625007034D9 /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145F9C9E1BC1B625007034D9 /* DecimalInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
-		14EEF7D01BC1C220009A5CFA /* IntegerInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EEF7CF1BC1C220009A5CFA /* IntegerInputValidator.swift */; settings = {ASSET_TAGS = (); }; };
-		14EEF7D21BC1C228009A5CFA /* IntegerInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EEF7D11BC1C228009A5CFA /* IntegerInputValidatorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		339E1FAF1DEB4F60E4F1D6AA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B066CDD096EDC69DE8566C57 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -22,6 +22,8 @@
 		142EF3931BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidatorTests.swift; sourceTree = "<group>"; };
 		142EF3951BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidator.swift; sourceTree = "<group>"; };
 		142F96F81BC14520009E514A /* InputValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidatable.swift; sourceTree = "<group>"; };
+		143B52831BC1D4AB00C57E78 /* CardNumberInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardNumberInputValidator.swift; sourceTree = "<group>"; };
+		143B52851BC1D55900C57E78 /* CardNumberInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardNumberInputValidatorTests.swift; sourceTree = "<group>"; };
 		1451080D1BC1C876009CD6CD /* InputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
 		145F9C9C1BC1B61F007034D9 /* DecimalInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalInputValidatorTests.swift; sourceTree = "<group>"; };
 		145F9C9E1BC1B625007034D9 /* DecimalInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalInputValidator.swift; sourceTree = "<group>"; };
@@ -31,8 +33,6 @@
 		14C136521AB784B200B7B07A /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 		14C136541AB784B200B7B07A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		14C136551AB784B200B7B07A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		14EEF7CF1BC1C220009A5CFA /* IntegerInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerInputValidator.swift; sourceTree = "<group>"; };
-		14EEF7D11BC1C228009A5CFA /* IntegerInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerInputValidatorTests.swift; sourceTree = "<group>"; };
 		38D9450506DF9FB4DAB4FC11 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B066CDD096EDC69DE8566C57 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A898596DB4CB940F8115C6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				142EF3931BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift */,
+				143B52851BC1D55900C57E78 /* CardNumberInputValidatorTests.swift */,
 				145F9C9C1BC1B61F007034D9 /* DecimalInputValidatorTests.swift */,
-				14EEF7D11BC1C228009A5CFA /* IntegerInputValidatorTests.swift */,
 				146D72B01AB782920058798C /* Supporting Files */,
 			);
 			path = Tests;
@@ -115,10 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				142F96F81BC14520009E514A /* InputValidatable.swift */,
-				142EF3951BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift */,
-				145F9C9E1BC1B625007034D9 /* DecimalInputValidator.swift */,
-				14EEF7CF1BC1C220009A5CFA /* IntegerInputValidator.swift */,
 				1451080D1BC1C876009CD6CD /* InputValidator.swift */,
+				142EF3951BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift */,
+				143B52831BC1D4AB00C57E78 /* CardNumberInputValidator.swift */,
+				145F9C9E1BC1B625007034D9 /* DecimalInputValidator.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -252,14 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14EEF7D01BC1C220009A5CFA /* IntegerInputValidator.swift in Sources */,
 				142EF3961BBA4A66005D1E1B /* CardExpirationDateInputValidator.swift in Sources */,
 				142EF3941BBA4A51005D1E1B /* CardExpirationDateInputValidatorTests.swift in Sources */,
 				145F9C9D1BC1B61F007034D9 /* DecimalInputValidatorTests.swift in Sources */,
+				143B52861BC1D55900C57E78 /* CardNumberInputValidatorTests.swift in Sources */,
 				145F9C9F1BC1B625007034D9 /* DecimalInputValidator.swift in Sources */,
+				143B52841BC1D4AB00C57E78 /* CardNumberInputValidator.swift in Sources */,
 				1451080E1BC1C876009CD6CD /* InputValidator.swift in Sources */,
 				142F96F91BC14520009E514A /* InputValidatable.swift in Sources */,
-				14EEF7D21BC1C228009A5CFA /* IntegerInputValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,11 +11,10 @@ public struct CardExpirationDateInputValidator: InputValidatable {
     public var validation: Validation?
 
     public init(validation: Validation? = nil) {
-        var validation = Validation()
-        let count = "MM/YY".characters.count
-        validation.maximumLength = count
-        validation.minimumLength = 1
-        self.validation = validation
+        var predefinedValidation = Validation()
+        predefinedValidation.maximumLength = "MM/YY".characters.count
+        predefinedValidation.required = validation?.required
+        self.validation = predefinedValidation
     }
 
     public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {

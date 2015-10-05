@@ -1,10 +1,10 @@
 PODS:
-  - Validation (0.2.0)
+  - Validation (0.3.0)
 
 DEPENDENCIES:
   - Validation
 
 SPEC CHECKSUMS:
-  Validation: 1010abf2029445d58fa749bccfbd5c2361b61a99
+  Validation: d1ec383698a97d2c7541fa013ddbec239fd0ef41
 
 COCOAPODS: 0.38.2
