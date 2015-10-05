@@ -26,7 +26,7 @@ result = validator.validateString("6") // true
 result = validator.validateString("7") // false
 ```
 
-It also helps you verify if a string should be inserted into another string, useful when validating inputs on a `UITextField`. For example validating the expiration date of a card (format: MM/YY where month is between 1-12 and YY is equal or later than the current year).
+It also helps you verify if a string should be inserted into another string, useful when validating inputs on a `UITextField`. For example validating the expiration date of a card, where the format is `MM/YY`, month is between 1-12 and YY is equal or later than the current year.
 
 ```objc
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
