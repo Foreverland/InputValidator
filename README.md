@@ -3,11 +3,13 @@
 ## Introduction
 
 `InputValidator` is the easiest way to validate a value, things that `InputValidator` lets you validate:
+- Required (non-empty)
 - Maximum length
 - Minimum length 
 - Maximum value
 - Minimum value
-- Required (non-empty)
+- Valid characters
+- Format (regex)
 
 For example if you want to validate that a value is between 5 and 6 you can do this:
 
@@ -24,13 +26,13 @@ result = validator.validateString("6") // true
 result = validator.validateString("7") // false
 ```
 
-It also helps you verify if a string should be inserted into another string, useful when validating inputs on a `UITextField`. For example no letters should be allowed in a `UITextField` that contains a phone number.
+It also helps you verify if a string should be inserted into another string, useful when validating inputs on a `UITextField`. For example validating the expiration date of a card (format: MM/YY where month is between 1-12 and YY is equal or later than the current year).
 
 ```objc
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (!string || [string isEqualToString:@"\n"]) return YES;
 
-    IntegerInputValidator *inputValidator = [IntegerInputValidator new];
+    CardExpirationDateInputValidator *inputValidator = [CardExpirationDateInputValidator new];
     return [inputValidator validateReplacementString:string withText:self.text withRange:range];
 }
 ```
@@ -39,7 +41,6 @@ It also helps you verify if a string should be inserted into another string, use
 
 - CardExpirationDate
 - Decimal
-- Integer
 
 ## Making your own input validator
 
