@@ -26,6 +26,8 @@ result = validator.validateString("6") // true
 result = validator.validateString("7") // false
 ```
 
+Find more information about the basic validations on the [`Validation` repository](https://github.com/3lvis/Validation).
+
 It also helps you verify if a string should be inserted into another string, useful when validating inputs on a `UITextField`. For example validating the expiration date of a card, where the format is `MM/YY`, month is between 1-12 and YY is equal or later than the current year.
 
 ```objc
