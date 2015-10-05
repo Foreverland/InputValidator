@@ -28,11 +28,10 @@ extension InputValidatable {
     }
 
     public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
-        let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
-
         var valid = true
         if let validation = self.validation {
-            valid = validation.validateString(evaluatedString)
+            let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            valid = validation.validateString(evaluatedString, complete: false)
         }
 
         return valid

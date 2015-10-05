@@ -12,7 +12,7 @@ public struct DecimalInputValidator: InputValidatable {
         var valid = true
         if let validation = self.validation {
             let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
-            valid = validation.validateString(evaluatedString)
+            valid = validation.validateString(evaluatedString, complete: false)
         }
 
         if valid {
