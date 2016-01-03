@@ -36,7 +36,6 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
         XCTAssertTrue(validator.validateReplacementString("1", fullString: "12/", inRange: NSRange(location: fourthCharacterLenght, length: fourthCharacterLenght + 1)))
         XCTAssertTrue(validator.validateReplacementString("2", fullString: "12/", inRange: NSRange(location: fourthCharacterLenght, length: fourthCharacterLenght + 1)))
 
-
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Year], fromDate: date)
