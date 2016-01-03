@@ -1,17 +1,17 @@
 import Foundation
 import Validation
 
-/*
-    This input validator should validate strings with the following pattern:
-    MM/YY, where MM is month and YY is year. MM shouldn't be more than 12 and year
-    can be pretty much any number above the current year (this to ensure that the
-    card is not expired).
-*/
+/**
+ This input validator should validate strings with the following pattern:
+ MM/YY, where MM is month and YY is year. MM shouldn't be more than 12 and year
+ can be pretty much any number above the current year (this to ensure that the
+ card is not expired).
+ */
 public struct CardExpirationDateInputValidator: InputValidatable {
     public var validation: Validation?
 
     public init(validation: Validation? = nil) {
-        let predefinedValidation = Validation()
+        var predefinedValidation = Validation()
         predefinedValidation.minimumLength = "MM/YY".characters.count
         predefinedValidation.maximumLength = "MM/YY".characters.count
         predefinedValidation.required = validation?.required
