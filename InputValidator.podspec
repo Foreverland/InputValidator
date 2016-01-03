@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/3lvis'
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.source_files = 'Source/**/*'
+  s.source_files = 'Sources/**/*'
   s.frameworks = 'Foundation'
   s.dependency 'Validation', '~> 0.3.1'
 end

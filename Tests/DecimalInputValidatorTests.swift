@@ -1,5 +1,6 @@
 import XCTest
 import Validation
+import InputValidator
 
 class DecimalInputValidatorTests: XCTestCase {
     func testDecimal() {

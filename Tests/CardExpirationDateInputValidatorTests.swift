@@ -1,5 +1,7 @@
 import XCTest
 import Validation
+import InputValidator
+import Foundation
 
 class CardExpirationDateInputValidatorTests: XCTestCase {
     func testCardExpirationDate() {
@@ -34,12 +36,21 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
         XCTAssertTrue(validator.validateReplacementString("1", fullString: "12/", inRange: NSRange(location: fourthCharacterLenght, length: fourthCharacterLenght + 1)))
         XCTAssertTrue(validator.validateReplacementString("2", fullString: "12/", inRange: NSRange(location: fourthCharacterLenght, length: fourthCharacterLenght + 1)))
 
+
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Year], fromDate: date)
+
+        let previousYear =  String(String(components.year - 1).characters.last!)
+        let currentYear =  String(String(components.year).characters.last!)
+        let nextYear =  String(String(components.year + 1).characters.last!)
+
         // 5th character: The fifth character composed with the fourth character should be equal or higher than 
         // the decimal of the current year
         let fifthCharacter = "MM/1"
         let fifthCharacterLenght = fifthCharacter.characters.count
-        XCTAssertFalse(validator.validateReplacementString("4", fullString: "12/1", inRange: NSRange(location: fifthCharacterLenght, length: fifthCharacterLenght + 1)))
-        XCTAssertTrue(validator.validateReplacementString("5", fullString: "12/1", inRange: NSRange(location: fifthCharacterLenght, length: fifthCharacterLenght + 1)))
-        XCTAssertTrue(validator.validateReplacementString("6", fullString: "12/1", inRange: NSRange(location: fifthCharacterLenght, length: fifthCharacterLenght + 1)))
+        XCTAssertFalse(validator.validateReplacementString(previousYear, fullString: "12/1", inRange: NSRange(location: fifthCharacterLenght, length: fifthCharacterLenght + 1)))
+        XCTAssertTrue(validator.validateReplacementString(currentYear, fullString: "12/1", inRange: NSRange(location: fifthCharacterLenght, length: fifthCharacterLenght + 1)))
+        XCTAssertTrue(validator.validateReplacementString(nextYear, fullString: "12/1", inRange: NSRange(location: fifthCharacterLenght, length: fifthCharacterLenght + 1)))
     }
 }
