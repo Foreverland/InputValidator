@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140D80AC1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D80AB1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift */; };
 		1449FDAC1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FDAA1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift */; };
 		1449FDAD1C395D93002A8F35 /* DecimalInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FDAB1C395D93002A8F35 /* DecimalInputValidatorTests.swift */; };
 		D964833BDDCD236414D3AF11 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0869A1C6DD35262C246EFC10 /* Pods.framework */; };
@@ -14,6 +15,7 @@
 
 /* Begin PBXFileReference section */
 		0869A1C6DD35262C246EFC10 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		140D80AB1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredInputValidatorTests.swift; sourceTree = "<group>"; };
 		1449FDAA1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidatorTests.swift; sourceTree = "<group>"; };
 		1449FDAB1C395D93002A8F35 /* DecimalInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalInputValidatorTests.swift; sourceTree = "<group>"; };
 		146D72AC1AB782920058798C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 			children = (
 				1449FDAA1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift */,
 				1449FDAB1C395D93002A8F35 /* DecimalInputValidatorTests.swift */,
+				140D80AB1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift */,
 				146D72B01AB782920058798C /* Supporting Files */,
 			);
 			path = Tests;
@@ -229,6 +232,7 @@
 			files = (
 				1449FDAD1C395D93002A8F35 /* DecimalInputValidatorTests.swift in Sources */,
 				1449FDAC1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift in Sources */,
+				140D80AC1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
