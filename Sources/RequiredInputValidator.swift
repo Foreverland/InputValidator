@@ -1,6 +1,9 @@
 import Foundation
 import Validation
 
+/**
+ This input validator has required = true, by default.
+ */
 public struct RequiredInputValidator: InputValidatable {
     public var validation: Validation?
 
