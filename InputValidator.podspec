@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "InputValidator"
   s.summary          = "Input Validators allow you to verify incoming input"
-  s.version          = "0.8.7"
+  s.version          = "0.9.0"
   s.homepage         = "https://github.com/3lvis/InputValidator"
   s.license          = 'MIT'
   s.author           = { "Elvis Nuñez" => "elvisnunez@me.com" }
