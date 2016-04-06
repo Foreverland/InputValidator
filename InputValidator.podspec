@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'Sources/**/*'
   s.frameworks = 'Foundation'
-  s.dependency 'Validation', '~> 0.3.2'
+  s.dependency 'Validation', '~> 0.3.3'
 end
