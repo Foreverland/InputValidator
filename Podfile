@@ -1,3 +1,5 @@
 use_frameworks!
 
-pod 'InputValidator', path: "."
+target 'Tests' do
+  pod 'InputValidator', path: "."
+end
