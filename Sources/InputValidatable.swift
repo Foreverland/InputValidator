@@ -39,15 +39,28 @@ extension InputValidatable {
 
     public func composedString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> String {
         var composedString = fullString ?? ""
-
-        if let replacementString = replacementString, range = range {
-            let index = composedString.startIndex.advancedBy(range.location)
-            if range.location == composedString.characters.count {
-                composedString.insertContentsOf(replacementString.characters, at: index)
-            } else {
-                composedString = (composedString as NSString).stringByReplacingCharactersInRange(range, withString: replacementString)
+        
+        func rangeFromNSRange(nsRange : NSRange, string: String) -> Range<String.Index>? {
+            let from16 = string.utf16.startIndex.advancedBy(nsRange.location, limit: string.utf16.endIndex)
+            let to16 = from16.advancedBy(nsRange.length, limit: string.utf16.endIndex)
+            if let from = String.Index(from16, within: string),
+                let to = String.Index(to16, within: string) {
+                return from ..< to
             }
-            return composedString
+            return nil
+        }
+
+        if let replacementString = replacementString, nsrange = range {
+            if let range = rangeFromNSRange(nsrange, string: composedString) {
+                let distance = composedString.startIndex.distanceTo(range.startIndex)
+                let index = composedString.startIndex.advancedBy(distance)
+                if distance == composedString.characters.count {
+                    composedString.insertContentsOf(replacementString.characters, at: index)
+                } else {
+                    composedString = (composedString as NSString).stringByReplacingCharactersInRange(nsrange, withString: replacementString)
+                }
+                return composedString
+            }
         }
 
         return composedString
