@@ -18,7 +18,7 @@ public struct CardExpirationDateInputValidator: InputValidatable {
         self.validation = predefinedValidation
     }
 
-    public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
+    public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         var valid = true
         if let validation = self.validation {
             let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
@@ -26,19 +26,19 @@ public struct CardExpirationDateInputValidator: InputValidatable {
         }
 
         if valid {
-            guard let replacementString = replacementString, range = range else { return valid }
+            guard let replacementString = replacementString, let range = range else { return valid }
 
             var composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
 
             if composedString.characters.count > 0 {
                 var precomposedString = composedString
                 if composedString.characters.count == 4 || composedString.characters.count == 5 {
-                    let index = composedString.startIndex.advancedBy("MM/".characters.count)
-                    precomposedString = composedString.substringFromIndex(index)
+                    let index = composedString.characters.index(composedString.startIndex, offsetBy: "MM/".characters.count)
+                    precomposedString = composedString.substring(from: index)
                 }
 
-                let formatter = NSNumberFormatter()
-                let number = formatter.numberFromString(precomposedString)?.integerValue
+                let formatter = NumberFormatter()
+                let number = formatter.number(from: precomposedString)?.intValue
                 if let number = number {
                     switch composedString.characters.count {
                     case 1:
@@ -49,12 +49,12 @@ public struct CardExpirationDateInputValidator: InputValidatable {
                         valid = (number > 0 && number <= maximumMonth)
                         break
                     case 3:
-                        let index = composedString.startIndex.advancedBy("MM".characters.count)
-                        composedString = composedString.substringFromIndex(index)
+                        let index = composedString.characters.index(composedString.startIndex, offsetBy: "MM".characters.count)
+                        composedString = composedString.substring(from: index)
                         valid = (composedString == "/")
                         break
                     case 4, 5:
-                        let year = NSCalendar.currentCalendar().component(.Year, fromDate: NSDate())
+                        let year = (Calendar.current as NSCalendar).component(.year, from: Date())
 
                         let century = floor(Double(year) / 100.0)
                         let basicYear = Double(year) - (century * 100.0)

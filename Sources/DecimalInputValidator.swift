@@ -8,7 +8,7 @@ public struct DecimalInputValidator: InputValidatable {
         self.validation = validation
     }
 
-    public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
+    public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         var valid = true
         if let validation = self.validation {
             let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
@@ -18,26 +18,26 @@ public struct DecimalInputValidator: InputValidatable {
         if valid {
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
             if composedString.characters.count > 0 {
-                let stringSet = NSCharacterSet(charactersInString: composedString)
-                let floatSet = NSMutableCharacterSet.decimalDigitCharacterSet()
-                floatSet.addCharactersInString(".,")
-                let hasValidElements = floatSet.isSupersetOfSet(stringSet)
+                let stringSet = CharacterSet(charactersIn: composedString)
+                let floatSet = NSMutableCharacterSet.decimalDigit()
+                floatSet.addCharacters(in: ".,")
+                let hasValidElements = floatSet.isSuperset(of: stringSet)
                 if hasValidElements  {
-                    let firstElementSet = NSCharacterSet(charactersInString: String(composedString.characters.first!))
-                    let integerSet = NSCharacterSet.decimalDigitCharacterSet()
-                    let firstCharacterIsNumber = integerSet.isSupersetOfSet(firstElementSet)
+                    let firstElementSet = CharacterSet(charactersIn: String(composedString.characters.first!))
+                    let integerSet = CharacterSet.decimalDigits
+                    let firstCharacterIsNumber = integerSet.isSuperset(of: firstElementSet)
                     if firstCharacterIsNumber {
                         if replacementString == nil {
-                            let lastElementSet = NSCharacterSet(charactersInString: String(composedString.characters.last!))
-                            let lastCharacterIsInvalid = !integerSet.isSupersetOfSet(lastElementSet)
+                            let lastElementSet = CharacterSet(charactersIn: String(composedString.characters.last!))
+                            let lastCharacterIsInvalid = !integerSet.isSuperset(of: lastElementSet)
                             if lastCharacterIsInvalid {
                                 valid = false
                             }
                         }
 
                         if valid {
-                            let elementsSeparatedByDot = composedString.componentsSeparatedByString(".")
-                            let elementsSeparatedByComma = composedString.componentsSeparatedByString(",")
+                            let elementsSeparatedByDot = composedString.components(separatedBy: ".")
+                            let elementsSeparatedByComma = composedString.components(separatedBy: ",")
                             if elementsSeparatedByDot.count >= 2 && elementsSeparatedByComma.count >= 2 {
                                 valid = false
                             } else if elementsSeparatedByDot.count > 2 || elementsSeparatedByComma.count > 2 {
