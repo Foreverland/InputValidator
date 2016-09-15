@@ -18,9 +18,14 @@ public struct DecimalInputValidator: InputValidatable {
         if valid {
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
             if composedString.characters.count > 0 {
+//                Punctuation validation (".,") crashes on Swift 3, that's why is excluded for now.
+//                let stringSet = CharacterSet(charactersIn: composedString)
+//                var floatSet = CharacterSet.decimalDigits
+//                floatSet.insert(charactersIn: ".,")
+//                let hasValidElements = floatSet.isSuperset(of: stringSet)
+
                 let stringSet = CharacterSet(charactersIn: composedString)
                 var floatSet = CharacterSet.decimalDigits
-                floatSet.insert(charactersIn: ".,")
                 let hasValidElements = floatSet.isSuperset(of: stringSet)
                 if hasValidElements  {
                     let firstElementSet = CharacterSet(charactersIn: String(composedString.characters.first!))
