@@ -18,18 +18,18 @@ public struct DecimalInputValidator: InputValidatable {
         if valid {
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
             if composedString.characters.count > 0 {
-                let stringSet = NSCharacterSet(charactersIn: composedString)
-                let floatSet = NSMutableCharacterSet.decimalDigit()
-                floatSet.addCharacters(in: ".,")
-                let hasValidElements = floatSet.isSuperset(of: stringSet as CharacterSet)
+                let stringSet = CharacterSet(charactersIn: composedString)
+                var floatSet = CharacterSet.decimalDigits
+                floatSet.insert(charactersIn: ".,")
+                let hasValidElements = floatSet.isSuperset(of: stringSet)
                 if hasValidElements  {
-                    let firstElementSet = NSCharacterSet(charactersIn: String(composedString.characters.first!))
-                    let integerSet = NSCharacterSet.decimalDigits
-                    let firstCharacterIsNumber = integerSet.isSuperset(of: firstElementSet as CharacterSet)
+                    let firstElementSet = CharacterSet(charactersIn: String(composedString.characters.first!))
+                    let integerSet = CharacterSet.decimalDigits
+                    let firstCharacterIsNumber = integerSet.isSuperset(of: firstElementSet)
                     if firstCharacterIsNumber {
                         if replacementString == nil {
-                            let lastElementSet = NSCharacterSet(charactersIn: String(composedString.characters.last!))
-                            let lastCharacterIsInvalid = !integerSet.isSuperset(of: lastElementSet as CharacterSet)
+                            let lastElementSet = CharacterSet(charactersIn: String(composedString.characters.last!))
+                            let lastCharacterIsInvalid = !integerSet.isSuperset(of: lastElementSet)
                             if lastCharacterIsInvalid {
                                 valid = false
                             }
