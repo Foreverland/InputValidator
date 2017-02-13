@@ -40,11 +40,11 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
         let calendar = Calendar.current
         let components = (calendar as NSCalendar).components([.year], from: date)
 
-        let previousYear =  String(String(components.year! - 1).characters.last!)
-        let currentYear =  String(String(describing: components.year).characters.last!)
-        let nextYear =  String(String(components.year! + 1).characters.last!)
+        let previousYear = String(String(components.year! - 1).characters.last!)
+        let currentYear = String(String(describing: components.year).characters.last!)
+        let nextYear = String(String(components.year! + 1).characters.last!)
 
-        // 5th character: The fifth character composed with the fourth character should be equal or higher than 
+        // 5th character: The fifth character composed with the fourth character should be equal or higher than
         // the decimal of the current year
         let fifthCharacter = "MM/1"
         let fifthCharacterLenght = fifthCharacter.characters.count
