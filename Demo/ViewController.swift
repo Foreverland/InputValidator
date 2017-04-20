@@ -1,4 +1,6 @@
 import UIKit
+import InputValidator
+import Validation
 
 class ViewController: UIViewController {
     lazy var textField: UITextField = {
@@ -8,6 +10,7 @@ class ViewController: UIViewController {
         textField.layer.cornerRadius = 10
         textField.layer.borderColor = UIColor.black.cgColor
         textField.layer.borderWidth = 0.5
+        textField.delegate = self
 
         let indentView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 5))
         textField.leftView = indentView
@@ -31,3 +34,15 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.characters.count == 0 || string == "\n" {
+            return true
+        }
+
+        var validation = Validation()
+        validation.maximumLength = 5
+        let inputValidator = InputValidator(validation: validation)
+        return inputValidator.validateReplacementString(string, fullString: textField.text, inRange: range)
+    }
+}
