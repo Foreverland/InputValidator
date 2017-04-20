@@ -38,18 +38,10 @@ extension InputValidatable {
     }
 
     public func composedString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> String {
-        var composedString = fullString ?? ""
-
-        if let replacementString = replacementString, let range = range {
-            let index = composedString.characters.index(composedString.startIndex, offsetBy: range.location)
-            if range.location == composedString.characters.count {
-                composedString.insert(contentsOf: replacementString.characters, at: index)
-            } else {
-                composedString = (composedString as NSString).replacingCharacters(in: range, with: replacementString)
-            }
-            return composedString
+        if let replacementString = replacementString, let range = range, let fullString = fullString as NSString? {
+            return fullString.replacingCharacters(in: range, with: replacementString)
         }
 
-        return composedString
+        return fullString ?? ""
     }
 }
