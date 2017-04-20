@@ -9,9 +9,4 @@ class RequiredInputValidatorTests: XCTestCase {
         XCTAssertTrue(validator.validateString("12/12"))
         XCTAssertFalse(validator.validateString(""))
     }
-    
-    func testEmojis() {
-        let validator = RequiredInputValidator()
-        XCTAssertTrue(validator.validateString("😀😇"))
-    }
 }

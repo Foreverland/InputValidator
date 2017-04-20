@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140491C51EA8B07900E159EA /* InputValidatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140491C41EA8B07900E159EA /* InputValidatableTests.swift */; };
 		140D80AC1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140D80AB1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift */; };
 		142F80A11EA8A4B500EA341B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F80A01EA8A4B500EA341B /* AppDelegate.swift */; };
 		142F80A31EA8A4B500EA341B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F80A21EA8A4B500EA341B /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140491C41EA8B07900E159EA /* InputValidatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidatableTests.swift; sourceTree = "<group>"; };
 		140D80AB1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredInputValidatorTests.swift; sourceTree = "<group>"; };
 		142F809E1EA8A4B500EA341B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142F80A01EA8A4B500EA341B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		146D72AF1AB782920058798C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				140491C41EA8B07900E159EA /* InputValidatableTests.swift */,
 				1449FDAA1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift */,
 				1449FDAB1C395D93002A8F35 /* DecimalInputValidatorTests.swift */,
 				140D80AB1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift */,
@@ -361,6 +364,7 @@
 			files = (
 				1449FDAD1C395D93002A8F35 /* DecimalInputValidatorTests.swift in Sources */,
 				1449FDAC1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift in Sources */,
+				140491C51EA8B07900E159EA /* InputValidatableTests.swift in Sources */,
 				140D80AC1C469D4D00F5BEAF /* RequiredInputValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +552,7 @@
 				142F80AE1EA8A4B500EA341B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		146D728E1AB782920058798C /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
