@@ -16,34 +16,34 @@ class DecimalInputValidatorTests: XCTestCase {
 
         // 1st character
         var fullString = ""
-        var fullStringLenght = fullString.characters.count
-        XCTAssertTrue(validator.validateReplacementString("0", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString("/", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
+        var fullStringLength = fullString.characters.count
+        XCTAssertTrue(validator.validateReplacementString("0", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString("/", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
 
         // 2nd character:
         fullString = "1"
-        fullStringLenght = fullString.characters.count
-        XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertTrue(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertTrue(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString("/", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
+        fullStringLength = fullString.characters.count
+        XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString("/", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
 
         // 3rd character:
         fullString = "1,"
-        fullStringLenght = fullString.characters.count
-        XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString("/", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
+        fullStringLength = fullString.characters.count
+        XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString("/", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
 
         // 3rd character alternative:
         fullString = "1."
-        fullStringLenght = fullString.characters.count
-        XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
-        XCTAssertFalse(validator.validateReplacementString("/", fullString: fullString, inRange: NSRange(location: fullStringLenght, length: fullStringLenght + 1)))
+        fullStringLength = fullString.characters.count
+        XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString("/", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
     }
 }
