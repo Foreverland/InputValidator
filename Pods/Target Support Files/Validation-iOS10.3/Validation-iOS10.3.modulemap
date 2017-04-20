@@ -1,0 +1,6 @@
+framework module Validation {
+  umbrella header "Validation-iOS10.3-umbrella.h"
+
+  export *
+  module * { export * }
+}
