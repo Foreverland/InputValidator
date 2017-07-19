@@ -1,6 +1,0 @@
-framework module InputValidator {
-  umbrella header "InputValidator-iOS9.0-umbrella.h"
-
-  export *
-  module * { export * }
-}
