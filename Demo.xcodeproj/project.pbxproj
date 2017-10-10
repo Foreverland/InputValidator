@@ -16,7 +16,7 @@
 		1449FDAC1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FDAA1C395D93002A8F35 /* CardExpirationDateInputValidatorTests.swift */; };
 		1449FDAD1C395D93002A8F35 /* DecimalInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449FDAB1C395D93002A8F35 /* DecimalInputValidatorTests.swift */; };
 		25D0F2501F1F90A7005E3372 /* InputValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 25D0F24E1F1F90A7005E3372 /* InputValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		25D0F2541F1F90D5005E3372 /* InputValidator-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0F24C1F1F90A7005E3372 /* InputValidator-iOS.framework */; };
+		25D0F2541F1F90D5005E3372 /* InputValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0F24C1F1F90A7005E3372 /* InputValidator.framework */; };
 		25D0F25B1F1F9116005E3372 /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0F2561F1F9116005E3372 /* CardExpirationDateInputValidator.swift */; };
 		25D0F25C1F1F9116005E3372 /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0F2571F1F9116005E3372 /* DecimalInputValidator.swift */; };
 		25D0F25D1F1F9116005E3372 /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0F2581F1F9116005E3372 /* InputValidatable.swift */; };
@@ -44,7 +44,7 @@
 		14C0AF831BD6D4230009ECBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		22300312A474F5E6F3512EC6 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23FB512C82F63F80D6E87FC9 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25D0F24C1F1F90A7005E3372 /* InputValidator-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "InputValidator-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25D0F24C1F1F90A7005E3372 /* InputValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InputValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D0F24E1F1F90A7005E3372 /* InputValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputValidator.h; sourceTree = "<group>"; };
 		25D0F24F1F1F90A7005E3372 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25D0F2561F1F9116005E3372 /* CardExpirationDateInputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidator.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25D0F2541F1F90D5005E3372 /* InputValidator-iOS.framework in Frameworks */,
+				25D0F2541F1F90D5005E3372 /* InputValidator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 			children = (
 				146D72AC1AB782920058798C /* Tests.xctest */,
 				142F809E1EA8A4B500EA341B /* Demo.app */,
-				25D0F24C1F1F90A7005E3372 /* InputValidator-iOS.framework */,
+				25D0F24C1F1F90A7005E3372 /* InputValidator.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 			);
 			name = "InputValidator-iOS";
 			productName = InputValidator;
-			productReference = 25D0F24C1F1F90A7005E3372 /* InputValidator-iOS.framework */;
+			productReference = 25D0F24C1F1F90A7005E3372 /* InputValidator.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -588,7 +588,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.3lvis.InputValidator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = InputValidator;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -617,7 +617,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.3lvis.InputValidator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = InputValidator;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -663,6 +663,7 @@
 				25D0F2531F1F90A7005E3372 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
